@@ -1,2 +1,2 @@
-wp-lightbox-plugin
-==================
+# WordPress Lightbox Plugin
+
