@@ -1,0 +1,2 @@
+wp-lightbox-plugin
+==================
