@@ -23,7 +23,7 @@ if (version_compare(phpversion(), '5.3', '<') === true) {
         'init',
         function () {
             if (!is_admin()) {
-                wp_enqueue_style(
+                wp_register_style(
                     'lightbox',
                     WP_PLUGIN_URL . '/wp-lightbox-plugin/lightbox/css/lightbox.css',
                     array(),
@@ -41,6 +41,7 @@ if (version_compare(phpversion(), '5.3', '<') === true) {
                     array('jquery', 'lightbox'),
                     '1.0.0'
                 );
+                wp_enqueue_style('lightbox');
                 wp_enqueue_script('lightbox');
                 wp_enqueue_script('lightbox2gallery');
             }
