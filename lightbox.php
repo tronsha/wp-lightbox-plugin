@@ -22,24 +22,28 @@ if (version_compare(phpversion(), '5.3', '<') === true) {
     add_action(
         'init',
         function () {
-            wp_enqueue_style(
-                'lightbox',
-                WP_PLUGIN_URL . '/wp-lightbox-plugin/lightbox/css/lightbox.css',
-                array(),
-                '2.7.1'
-            );
-            wp_enqueue_script(
-                'lightbox',
-                WP_PLUGIN_URL . '/wp-lightbox-plugin/lightbox/js/lightbox.js',
-                array('jquery'),
-                '2.7.1'
-            );
-            wp_enqueue_script(
-                'lightbox2gallery',
-                WP_PLUGIN_URL . '/wp-lightbox-plugin/js/lightbox2gallery.js',
-                array('jquery', 'lightbox'),
-                '1.0.0'
-            );
+            if (!is_admin()) {
+                wp_enqueue_style(
+                    'lightbox',
+                    WP_PLUGIN_URL . '/wp-lightbox-plugin/lightbox/css/lightbox.css',
+                    array(),
+                    '2.7.1'
+                );
+                wp_register_script(
+                    'lightbox',
+                    WP_PLUGIN_URL . '/wp-lightbox-plugin/lightbox/js/lightbox.js',
+                    array('jquery'),
+                    '2.7.1'
+                );
+                wp_register_script(
+                    'lightbox2gallery',
+                    WP_PLUGIN_URL . '/wp-lightbox-plugin/js/lightbox2gallery.js',
+                    array('jquery', 'lightbox'),
+                    '1.0.0'
+                );
+                wp_enqueue_script('lightbox');
+                wp_enqueue_script('lightbox2gallery');
+            }
         }
     );
 
