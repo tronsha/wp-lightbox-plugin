@@ -10,7 +10,10 @@ Copyright: Stefan Hüsges
 License: MIT
 */
 
-defined('ABSPATH') or die("No script kiddies please!");
+if (!defined('ABSPATH')) {
+    header("HTTP/1.0 404 Not Found");
+    die;
+}
 
 if (version_compare(phpversion(), '5.3', '<') === true) {
 
@@ -25,19 +28,19 @@ if (version_compare(phpversion(), '5.3', '<') === true) {
             if (!is_admin()) {
                 wp_register_style(
                     'lightbox',
-                    WP_PLUGIN_URL . '/wp-lightbox-plugin/lightbox/css/lightbox.css',
+                    plugin_dir_url(__FILE__) . 'lightbox/css/lightbox.css',
                     array(),
                     '2.7.1'
                 );
                 wp_register_script(
                     'lightbox',
-                    WP_PLUGIN_URL . '/wp-lightbox-plugin/lightbox/js/lightbox.js',
+                    plugin_dir_url(__FILE__) . 'lightbox/js/lightbox.js',
                     array('jquery'),
                     '2.7.1'
                 );
                 wp_register_script(
                     'lightbox2gallery',
-                    WP_PLUGIN_URL . '/wp-lightbox-plugin/js/lightbox2gallery.js',
+                    plugin_dir_url(__FILE__) . 'js/lightbox2gallery.js',
                     array('jquery', 'lightbox'),
                     '1.0.0'
                 );
