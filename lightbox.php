@@ -1,14 +1,20 @@
 <?php
-/*
-Plugin Name: Lightbox
-Plugin URI: https://github.com/tronsha/wp-lightbox-plugin
-Description: Lightbox Plugin
-Version: 1.0
-Author: Stefan Hüsges
-Author URI: http://www.mpcx.net/
-Copyright: Stefan Hüsges
-License: MIT
-*/
+/**
+ * @link              https://github.com/tronsha/wp-lightbox-plugin
+ * @since             1.0.0
+ * @package           wp-lightbox-plugin
+ *
+ * @wordpress-plugin
+ * Plugin Name:       MPCX Lightbox
+ * Plugin URI:        https://github.com/tronsha/wp-lightbox-plugin
+ * Description:       Lightbox Plugin
+ * Version:           1.0.0
+ * Author:            Stefan Hüsges
+ * Author URI:        http://www.mpcx.net/
+ * Copyright:         Stefan Hüsges
+ * License:           MIT
+ * License URI:       https://raw.githubusercontent.com/tronsha/wp-lightbox-plugin/master/LICENSE
+ */
 
 if (!defined('ABSPATH')) {
     header("HTTP/1.0 404 Not Found");
