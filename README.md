@@ -1,5 +1,5 @@
 # WordPress Lightbox Plugin
 
-This plugin uses lightbox2 from Lokesh Dhakar
+This plugin uses [Lightbox2][1] from Lokesh Dhakar
 
-<https://github.com/lokesh/lightbox2>
+[1]: https://github.com/lokesh/lightbox2
