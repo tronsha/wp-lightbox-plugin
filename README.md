@@ -1,11 +1,10 @@
 # WordPress Lightbox Plugin
 
-This plugin uses [Lightbox2][5] from Lokesh Dhakar
+This plugin uses [Lightbox2][3] from Lokesh Dhakar
 
 ## Requirements
 
-* [WordPress Requirements][3]
-* [PHP][4] 5.3.2 or newer
+* [WordPress Requirements][4]
 
 ## Creator
 
@@ -21,7 +20,5 @@ This plugin uses [Lightbox2][5] from Lokesh Dhakar
 
 [1]: http://www.mpcx.net
 [2]: https://github.com/tronsha
-[3]: https://wordpress.org/about/requirements/
-[4]: http://php.net/
-[5]: https://github.com/lokesh/lightbox2
-
+[3]: https://github.com/lokesh/lightbox2
+[4]: https://wordpress.org/about/requirements/
