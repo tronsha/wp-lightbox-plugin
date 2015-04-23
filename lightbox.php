@@ -16,6 +16,7 @@
  * License URI:       https://raw.githubusercontent.com/tronsha/wp-lightbox-plugin/master/LICENSE
  */
 
+defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 function initLightbox() {
 	if ( ! is_admin() ) {
