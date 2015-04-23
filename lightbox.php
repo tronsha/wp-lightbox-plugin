@@ -6,7 +6,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       UPA Lightbox
- * Plugin URI:        https://github.com/tronsha/wp-lightbox-plugin/blob/upa/README.md
+ * Plugin URI:        https://github.com/tronsha/wp-lightbox-plugin/tree/upa
  * Description:       Lightbox Plugin
  * Version:           1.0.1
  * Author:            UPA-Webdesign
