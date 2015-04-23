@@ -5,12 +5,12 @@
  * @package           wp-lightbox-plugin
  *
  * @wordpress-plugin
- * Plugin Name:       MPCX Lightbox
- * Plugin URI:        https://github.com/tronsha/wp-lightbox-plugin
+ * Plugin Name:       UPA Lightbox
+ * Plugin URI:        https://github.com/tronsha/wp-lightbox-plugin/blob/upa/README.md
  * Description:       Lightbox Plugin
  * Version:           1.0.1
- * Author:            Stefan Hüsges
- * Author URI:        http://www.mpcx.net/
+ * Author:            UPA-Webdesign
+ * Author URI:        http://www.upa-webdesign.de/
  * Copyright:         Stefan Hüsges
  * License:           MIT
  * License URI:       https://raw.githubusercontent.com/tronsha/wp-lightbox-plugin/master/LICENSE
@@ -25,6 +25,12 @@ function initLightbox() {
 			array(),
 			'2.7.1'
 		);
+		wp_register_style(
+			'gallery',
+			plugin_dir_url( __FILE__ ) . 'css/gallery.css',
+			array(),
+			'1.0.0'
+		);
 		wp_register_script(
 			'lightbox',
 			plugin_dir_url( __FILE__ ) . 'lightbox/js/lightbox.js',
@@ -38,6 +44,7 @@ function initLightbox() {
 			'1.0.0'
 		);
 		wp_enqueue_style( 'lightbox' );
+		wp_enqueue_style( 'gallery' );
 		wp_enqueue_script( 'lightbox' );
 		wp_enqueue_script( 'lightbox2gallery' );
 	}

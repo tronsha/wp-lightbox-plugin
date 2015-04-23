@@ -1,18 +1,6 @@
-# WordPress Lightbox Plugin
+# UPA Lightbox Plugin für WordPress
 
 This plugin uses [Lightbox2][3] from Lokesh Dhakar
-
-## Requirements
-
-* [WordPress Requirements][4]
-
-## Creator
-
-**Stefan Hüsges**
-
-:computer: [Homepage][1]
-
-:octocat: [GitHub][2]
 
 ## License
 
