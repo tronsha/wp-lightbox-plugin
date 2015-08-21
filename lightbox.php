@@ -22,20 +22,20 @@ function initLightbox() {
 	if ( ! is_admin() ) {
 		wp_register_style(
 			'lightbox',
-			'//cdn.rawgit.com/tronsha/lightbox2gallery/cdn/css/lightbox.css',
+			'//cdn.rawgit.com/tronsha/cdn/lightbox/css/lightbox.css',
 			array(),
 			'2.8.1'
 		);
 		wp_register_script(
 			'lightbox',
-			'//cdn.rawgit.com/tronsha/lightbox2gallery/cdn/js/lightbox.min.js',
+			'//cdn.rawgit.com/tronsha/cdn/lightbox/js/lightbox.min.js',
 			array( 'jquery' ),
 			'2.8.1',
 			true
 		);
 		wp_register_script(
 			'lightbox2gallery',
-			'//cdn.rawgit.com/tronsha/lightbox2gallery/cdn/js/lightbox2gallery.js',
+			'//cdn.rawgit.com/tronsha/cdn/lightbox/js/lightbox2gallery.js',
 			array( 'jquery', 'lightbox' ),
 			'1.1.0',
 			true
