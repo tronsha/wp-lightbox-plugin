@@ -3,7 +3,7 @@
 Contributors: deustron
 Tags: lightbox, jquery
 Requires at least: 4.0
-Tested up to: 4.2
+
 Stable tag: 1.0
 License: MIT
 License URI: https://raw.githubusercontent.com/tronsha/wp-lightbox-plugin/master/LICENSE
