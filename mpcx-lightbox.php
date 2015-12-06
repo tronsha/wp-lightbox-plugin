@@ -8,7 +8,7 @@
  * Plugin Name:       MPCX Lightbox
  * Plugin URI:        https://github.com/tronsha/wp-lightbox-plugin
  * Description:       Lightbox Plugin
- * Version:           1.1.0
+ * Version:           1.1.1
  * Author:            Stefan Hüsges
  * Author URI:        http://www.mpcx.net/
  * Copyright:         Stefan Hüsges
@@ -28,21 +28,21 @@ function initLightbox() {
 		);
 		wp_register_script(
 			'lightbox',
-			plugin_dir_url( __FILE__ ) . 'vendor/lightbox/js/lightbox.js',
+			plugin_dir_url( __FILE__ ) . 'vendor/lightbox/js/lightbox.min.js',
 			array( 'jquery' ),
 			'2.8.1',
 			true
 		);
 		wp_register_script(
-			'lightbox2gallery',
-			plugin_dir_url( __FILE__ ) . 'js/lightbox2gallery.js',
+			'mpcx-lightbox2gallery',
+			plugin_dir_url( __FILE__ ) . 'js/mpcx-lightbox2gallery.min.js',
 			array( 'jquery', 'lightbox' ),
-			'1.0.0',
+			'1.1.1',
 			true
 		);
 		wp_enqueue_style( 'lightbox' );
 		wp_enqueue_script( 'lightbox' );
-		wp_enqueue_script( 'lightbox2gallery' );
+		wp_enqueue_script( 'mpcx-lightbox2gallery' );
 	}
 }
 
