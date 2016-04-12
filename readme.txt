@@ -1,19 +1,22 @@
-=== MPCX Lightbox ===
+=== Lightbox ===
 Contributors: DeusTron
-Tags: lightbox, jquery, responsive, jquery, plugin
+Tags: lightbox, responsive, jquery, plugin
 Requires at least: 4.0
 Tested up to: 4.5
 Stable tag: 1.1.1
 License: MIT
 License URI: https://raw.githubusercontent.com/tronsha/wp-lightbox-plugin/master/LICENSE
 
+Just a Lightbox Plugin
+
 == Description ==
 
-Just Another Lightbox Plugin.
+[Source Code on GitHub](https://github.com/tronsha/wp-lightbox-plugin)
 
 = Documentation =
 
-Here you can find the [Documentation](https://github.com/tronsha/wp-lightbox-plugin/blob/master/README.md)
+The Plugin requires PHP 5.3.2 or newer.
+
 This plugin uses [Lightbox2](https://github.com/lokesh/lightbox2) from Lokesh Dhakar
 
 == Installation ==
