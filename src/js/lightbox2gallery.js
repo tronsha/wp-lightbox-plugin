@@ -1,4 +1,9 @@
-/*! WordPress Lightbox Plugin | MIT License | github.com/tronsha/wp-lightbox-plugin */
+/*!
+ * WordPress Lightbox Plugin
+ * Copyright 2015 - 2016 Stefan Hüsges
+ * MIT License
+ * https://github.com/tronsha/wp-lightbox-plugin
+ */
 jQuery(document).ready(function () {
     var $ = jQuery;
     $('.gallery').each(function () {
