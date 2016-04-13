@@ -15,7 +15,11 @@ Just a Lightbox Plugin
 
 = Documentation =
 
-The Plugin requires PHP 5.3.2 or newer.
+Select "Link to: Media File" when creating a gallery.
+
+If the plugin is active, the images are now open in the lightbox.
+
+The plugin requires PHP 5.3.2 or newer.
 
 This plugin uses [Lightbox2](https://github.com/lokesh/lightbox2) from Lokesh Dhakar
 
