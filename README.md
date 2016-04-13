@@ -1,16 +1,19 @@
 # WordPress Lightbox Plugin
 
-Select "Link to: Media File" when creating a gallery.
+Select `Link to: Media File` when creating a gallery.
 
 If the plugin is active, the images are now open in the lightbox.
-
-The plugin requires PHP 5.3.2 or newer.
 
 This plugin uses [Lightbox2][3] from Lokesh Dhakar
 
 ## Requirements
 
 * [WordPress Requirements][4]
+* [PHP][5] 5.3.2 or newer
+
+## Download
+
+:package: [WordPress Plugins][6]
 
 ## Creator
 
@@ -28,3 +31,5 @@ This plugin uses [Lightbox2][3] from Lokesh Dhakar
 [2]: https://github.com/tronsha
 [3]: https://github.com/lokesh/lightbox2
 [4]: https://wordpress.org/about/requirements/
+[5]: http://php.net/
+[6]: https://wordpress.org/plugins/mpcx-lightbox/
