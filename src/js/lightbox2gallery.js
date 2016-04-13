@@ -1,3 +1,4 @@
+/*! WordPress Lightbox Plugin | MIT License | github.com/tronsha/wp-lightbox-plugin */
 jQuery(document).ready(function () {
     var $ = jQuery;
     $('.gallery').each(function () {
