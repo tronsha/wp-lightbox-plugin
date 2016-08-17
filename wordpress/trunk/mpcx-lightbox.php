@@ -27,13 +27,13 @@ if ( ! is_admin() ) {
 				'mpcx-lightbox',
 				plugin_dir_url( __FILE__ ) . 'public/css/lightbox.min.css',
 				array(),
-				'1.1.5'
+				'1.1.6'
 			);
 			wp_register_script(
 				'mpcx-lightbox',
 				plugin_dir_url( __FILE__ ) . 'public/js/lightbox.min.js',
 				array( 'jquery' ),
-				'1.1.5',
+				'1.1.6',
 				true
 			);
 			wp_enqueue_style( 'mpcx-lightbox' );
