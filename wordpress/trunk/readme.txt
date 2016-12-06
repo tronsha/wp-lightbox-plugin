@@ -2,8 +2,8 @@
 Contributors: DeusTron
 Tags: lightbox, responsive, jquery, plugin
 Requires at least: 4.0
-Tested up to: 4.6
-Stable tag: 1.1.6
+Tested up to: 4.7
+Stable tag: 1.1.7
 License: MIT
 License URI: https://raw.githubusercontent.com/tronsha/wp-lightbox-plugin/master/LICENSE
 
@@ -27,3 +27,8 @@ This plugin uses [Lightbox2](https://github.com/lokesh/lightbox2) from Lokesh Dh
 
 1. Upload `mpcx-lightbox` to the `/wp-content/plugins/` directory.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
+
+== Changelog ==
+
+= 1.1.7 =
+* Update: Lightbox v2.9.0
