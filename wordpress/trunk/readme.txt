@@ -28,6 +28,10 @@ This plugin uses [Lightbox2](https://github.com/lokesh/lightbox2) from Lokesh Dh
 1. Upload `mpcx-lightbox` to the `/wp-content/plugins/` directory.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
 
+== Screenshots ==
+
+1. Select "Link to: Media File" when creating a gallery.
+
 == Changelog ==
 
 = 1.1.7 =
