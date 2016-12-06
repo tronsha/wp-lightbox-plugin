@@ -15,7 +15,7 @@ Just a Lightbox Plugin
 
 = Documentation =
 
-Select "Link to: Media File" when creating a gallery.
+Select "Media File" at "Link to" when creating a gallery.
 
 If the plugin is active, the images are now open in the lightbox.
 
@@ -30,7 +30,7 @@ This plugin uses [Lightbox2](https://github.com/lokesh/lightbox2) from Lokesh Dh
 
 == Screenshots ==
 
-1. Select "Link to: Media File" when creating a gallery.
+1. Select "Media File" at "Link to" when creating a gallery.
 
 == Changelog ==
 
