@@ -1,6 +1,6 @@
 # WordPress Lightbox Plugin
 
-Select `Link to: Media File` when creating a gallery.
+Select `Media File` at `Link to` when creating a gallery.
 
 If the plugin is active, the images are now open in the lightbox.
 
