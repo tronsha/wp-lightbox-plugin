@@ -18,27 +18,25 @@
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-if ( ! is_admin() ) {
+define( 'MPCX_LIGHTBOX_VERSION', '1.1.7' );
 
-	add_action(
-		'init',
-		function () {
-			wp_register_style(
-				'mpcx-lightbox',
-				plugin_dir_url( __FILE__ ) . 'public/css/lightbox.min.css',
-				array(),
-				'1.1.7'
-			);
-			wp_register_script(
-				'mpcx-lightbox',
-				plugin_dir_url( __FILE__ ) . 'public/js/lightbox.min.js',
-				array( 'jquery' ),
-				'1.1.7',
-				true
-			);
-			wp_enqueue_style( 'mpcx-lightbox' );
-			wp_enqueue_script( 'mpcx-lightbox' );
-		}
-	);
-
-}
+add_action(
+	'wp_enqueue_scripts',
+	function () {
+		wp_register_style(
+			'mpcx-lightbox',
+			plugin_dir_url( __FILE__ ) . 'public/css/lightbox.min.css',
+			array(),
+			MPCX_LIGHTBOX_VERSION
+		);
+		wp_register_script(
+			'mpcx-lightbox',
+			plugin_dir_url( __FILE__ ) . 'public/js/lightbox.min.js',
+			array( 'jquery' ),
+			MPCX_LIGHTBOX_VERSION,
+			true
+		);
+		wp_enqueue_style( 'mpcx-lightbox' );
+		wp_enqueue_script( 'mpcx-lightbox' );
+	}
+);
