@@ -20,6 +20,8 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 define( 'MPCX_LIGHTBOX_VERSION', '1.1.7' );
 
+load_plugin_textdomain( 'mpcx-lightbox', false, dirname( plugin_basename( __FILE__ ) ) . '/localization' );
+
 add_action(
 	'wp_enqueue_scripts',
 	function () {
