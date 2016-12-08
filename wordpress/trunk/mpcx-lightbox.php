@@ -12,6 +12,8 @@
  * Author:            Stefan Hüsges
  * Author URI:        http://www.mpcx.net/
  * Copyright:         Stefan Hüsges
+ * Text Domain:       mpcx-lightbox
+ * Domain Path:       /languages/
  * License:           MIT
  * License URI:       https://raw.githubusercontent.com/tronsha/wp-lightbox-plugin/master/LICENSE
  */
