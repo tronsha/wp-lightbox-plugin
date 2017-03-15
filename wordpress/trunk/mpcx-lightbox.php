@@ -22,7 +22,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 define( 'MPCX_LIGHTBOX_VERSION', '1.1.8' );
 
-load_plugin_textdomain( 'mpcx-lightbox', false, dirname( plugin_basename( __FILE__ ) ) . '/localization' );
+load_plugin_textdomain( 'mpcx-lightbox', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 
 add_filter(
 	'wp_get_attachment_link',
