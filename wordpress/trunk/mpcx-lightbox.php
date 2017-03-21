@@ -24,6 +24,13 @@ define( 'MPCX_LIGHTBOX_VERSION', '1.1.8' );
 
 load_plugin_textdomain( 'mpcx-lightbox', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 
+register_activation_hook(
+	__FILE__,
+	function () {
+		add_option( 'mpcx_lightbox', array( 'version' => MPCX_LIGHTBOX_VERSION ) );
+	}
+);
+
 add_filter(
 	'wp_get_attachment_link',
 	function ( $markup, $id, $size, $permalink, $icon, $text ) {
