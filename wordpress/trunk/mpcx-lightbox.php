@@ -31,6 +31,23 @@ register_activation_hook(
 	}
 );
 
+if ( is_admin() ) {
+
+	add_action(
+		'upgrader_process_complete',
+		function ( $object, $options ) {
+			if ( 'update' === $options['action'] && 'plugin' === $options['type'] ) {
+				if ( true === in_array( plugin_basename( __FILE__ ), $options['plugins'] ) ) {
+					include plugin_dir_path( __FILE__ ) . 'update.php';
+				}
+			}
+		},
+		10,
+		2
+	);
+
+}
+
 add_filter(
 	'wp_get_attachment_link',
 	function ( $markup, $id, $size, $permalink, $icon, $text ) {
