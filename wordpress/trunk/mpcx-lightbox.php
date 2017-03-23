@@ -46,6 +46,21 @@ if ( is_admin() ) {
 		2
 	);
 
+	add_action(
+		'admin_menu',
+		function () {
+			add_options_page(
+				'Lightbox',
+				'Lightbox',
+				'manage_options',
+				'lightbox',
+				function () {
+					include plugin_dir_path( __FILE__ ) . 'admin/options.php';
+				}
+			);
+		}
+	);
+
 }
 
 add_filter(
