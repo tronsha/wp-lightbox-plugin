@@ -47,6 +47,16 @@ if ( is_admin() ) {
 	);
 
 	add_action(
+		'admin_init',
+		function () {
+			register_setting(
+				'mpcx_lightbox',
+				'mpcx_lightbox'
+			);
+		}
+	);
+
+	add_action(
 		'admin_menu',
 		function () {
 			add_options_page(
