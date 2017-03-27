@@ -73,42 +73,37 @@ if ( true === is_admin() ) {
 
 }
 
-$lightbox_options = get_option( 'mpcx_lightbox' );
-$title_id = intval( $lightbox_options['title'] );
-
-if ( -1 !== $title_id ) {
-
-	add_filter(
-		'wp_get_attachment_link',
-		function ( $markup, $id, $size, $permalink, $icon, $text ) {
-			$lightbox_options = get_option( 'mpcx_lightbox' );
-			$title_id = intval( $lightbox_options['title'] );
-			$_post = get_post( $id );
-			switch ( $title_id ) {
-				case 1:
-					$title = $_post->post_content;
-					break;
-				case 2:
-					$title = $_post->post_excerpt;
-					break;
-				case 0:
-				default:
-					$title = $_post->post_title;
+add_filter(
+	'wp_get_attachment_link',
+	function ( $markup, $id, $size, $permalink, $icon, $text ) {
+		$lightbox_options = get_option( 'mpcx_lightbox' );
+		$title_id         = intval( $lightbox_options['title'] );
+		$_post            = get_post( $id );
+		switch ( $title_id ) {
+			case - 1:
+				return $markup;
+			case 1:
+				$title = $_post->post_content;
+				break;
+			case 2:
+				$title = $_post->post_excerpt;
+				break;
+			case 0:
+			default:
+				$title = $_post->post_title;
+		}
+		$parts = explode( '>', $markup, 2 );
+		if ( false === empty( $title ) && false === empty( $parts[0] ) && false === empty( $parts[1] ) ) {
+			if ( false === strpos( $parts[0], 'data-title' ) ) {
+				$markup = $parts[0] . " data-title='" . $title . "'>" . $parts[1];
 			}
-			$parts = explode( '>', $markup, 2 );
-			if ( false === empty( $title ) && false === empty( $parts[0] ) && false === empty( $parts[1] ) ) {
-				if ( false === strpos( $parts[0], 'data-title' ) ) {
-					$markup = $parts[0] . " data-title='" . $title . "'>" . $parts[1];
-				}
-			}
+		}
 
-			return $markup;
-		},
-		10,
-		6
-	);
-
-}
+		return $markup;
+	},
+	10,
+	6
+);
 
 add_action(
 	'wp_enqueue_scripts',
