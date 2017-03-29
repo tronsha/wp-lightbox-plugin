@@ -71,6 +71,24 @@ if ( true === is_admin() ) {
 		}
 	);
 
+	add_filter(
+		'plugin_action_links',
+		function ( $actions, $plugin_file ) {
+			static $plugin;
+			if ( ! isset( $plugin ) ) {
+				$plugin = plugin_basename( __FILE__ );
+			}
+			if ( $plugin == $plugin_file ) {
+				$settings = array( 'settings' => '<a href="options-general.php?page=lightbox">' . __( 'Settings', 'mpcx-lightbox' ) . '</a>' );
+				$actions  = array_merge( $settings, $actions );
+			}
+
+			return $actions;
+		},
+		10,
+		5
+	);
+
 }
 
 add_filter(
