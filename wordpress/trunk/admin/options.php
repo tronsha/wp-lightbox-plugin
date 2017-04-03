@@ -23,10 +23,10 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 				</th>
 				<td>
 					<select id="mpcx_lightbox_title" name="mpcx_lightbox[title]">
-						<option value="-1" <?php selected( $lightbox_options['title'], - 1 ); ?>><?php _e( 'Disabled', 'mpcx-lightbox' ); ?></option>
-						<option value="0" <?php selected( $lightbox_options['title'], 0 ); ?>><?php _e( 'Title', 'mpcx-lightbox' ); ?></option>
-						<option value="1" <?php selected( $lightbox_options['title'], 1 ); ?>><?php _e( 'Description', 'mpcx-lightbox' ); ?></option>
-						<option value="2" <?php selected( $lightbox_options['title'], 2 ); ?>><?php _e( 'Caption', 'mpcx-lightbox' ); ?></option>
+						<option value="0" <?php selected( $lightbox_options['title'], 0 ); ?>><?php _e( 'Disabled', 'mpcx-lightbox' ); ?></option>
+						<option value="1" <?php selected( $lightbox_options['title'], 1 ); ?>><?php _e( 'Title', 'mpcx-lightbox' ); ?></option>
+						<option value="2" <?php selected( $lightbox_options['title'], 2 ); ?>><?php _e( 'Description', 'mpcx-lightbox' ); ?></option>
+						<option value="3" <?php selected( $lightbox_options['title'], 3 ); ?>><?php _e( 'Caption', 'mpcx-lightbox' ); ?></option>
 					</select>
 				</td>
 			</tr>

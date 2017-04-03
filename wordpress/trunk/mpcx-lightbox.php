@@ -98,17 +98,18 @@ add_filter(
 		$title_id         = intval( $lightbox_options['title'] );
 		$_post            = get_post( $id );
 		switch ( $title_id ) {
-			case - 1:
-				return $markup;
 			case 1:
-				$title = $_post->post_content;
+				$title = $_post->post_title;
 				break;
 			case 2:
+				$title = $_post->post_content;
+				break;
+			case 3:
 				$title = $_post->post_excerpt;
 				break;
 			case 0:
 			default:
-				$title = $_post->post_title;
+				return $markup;
 		}
 		$parts = explode( '>', $markup, 2 );
 		if ( false === empty( $title ) && false === empty( $parts[0] ) && false === empty( $parts[1] ) ) {
