@@ -1,6 +1,6 @@
 /*!
  * WordPress Lightbox Plugin
- * Copyright 2015 - 2016 Stefan Hüsges
+ * Copyright 2015 - 2017 Stefan Hüsges
  * MIT License
  * https://github.com/tronsha/wp-lightbox-plugin
  */
