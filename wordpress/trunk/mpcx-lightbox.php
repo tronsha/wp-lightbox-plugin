@@ -8,7 +8,7 @@
  * Plugin Name:       Lightbox
  * Plugin URI:        https://github.com/tronsha/wp-lightbox-plugin
  * Description:       Lightbox Plugin
- * Version:           1.1.8
+ * Version:           1.2.0
  * Author:            Stefan Hüsges
  * Author URI:        http://www.mpcx.net/
  * Copyright:         Stefan Hüsges
@@ -20,14 +20,14 @@
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-define( 'MPCX_LIGHTBOX_VERSION', '1.1.8' );
+define( 'MPCX_LIGHTBOX_VERSION', '1.2.0' );
 
 load_plugin_textdomain( 'mpcx-lightbox', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 
 register_activation_hook(
 	__FILE__,
 	function () {
-		add_option( 'mpcx_lightbox', array( 'version' => MPCX_LIGHTBOX_VERSION, 'title' => 0 ) );
+		add_option( 'mpcx_lightbox', array( 'version' => MPCX_LIGHTBOX_VERSION, 'lightbox' => 'lightbox', 'title' => 0 ) );
 	}
 );
 
@@ -113,8 +113,17 @@ add_filter(
 		}
 		$parts = explode( '>', $markup, 2 );
 		if ( false === empty( $title ) && false === empty( $parts[0] ) && false === empty( $parts[1] ) ) {
-			if ( false === strpos( $parts[0], 'data-title' ) ) {
-				$markup = $parts[0] . " data-title='" . $title . "'>" . $parts[1];
+			switch ( $lightbox_options['lightbox'] ) {
+				case 'fancybox':
+					$attributeName = 'data-caption';
+					break;
+				case 'lightbox':
+				default:
+					$attributeName = 'data-title';
+					break;
+			}
+			if ( false === strpos( $parts[0], $attributeName ) ) {
+				$markup = $parts[0] . ' ' . $attributeName . '=\'' . $title . '\'>' . $parts[1];
 			}
 		}
 
@@ -127,15 +136,25 @@ add_filter(
 add_action(
 	'wp_enqueue_scripts',
 	function () {
+		$lightbox_options = get_option( 'mpcx_lightbox' );
+		switch ( $lightbox_options['lightbox'] ) {
+			case 'fancybox':
+				$fileName = 'fancybox';
+				break;
+			case 'lightbox':
+			default:
+				$fileName = 'lightbox';
+				break;
+		}
 		wp_register_style(
 			'mpcx-lightbox',
-			plugin_dir_url( __FILE__ ) . 'public/css/lightbox.min.css',
+			plugin_dir_url( __FILE__ ) . 'public/css/' . $fileName . '.min.css',
 			array(),
 			MPCX_LIGHTBOX_VERSION
 		);
 		wp_register_script(
 			'mpcx-lightbox',
-			plugin_dir_url( __FILE__ ) . 'public/js/lightbox.min.js',
+			plugin_dir_url( __FILE__ ) . 'public/js/' . $fileName . '.min.js',
 			array( 'jquery' ),
 			MPCX_LIGHTBOX_VERSION,
 			true

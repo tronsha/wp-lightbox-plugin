@@ -3,7 +3,7 @@ Contributors: DeusTron
 Tags: lightbox, responsive, jquery, plugin
 Requires at least: 4.0
 Tested up to: 4.7
-Stable tag: 1.1.8
+Stable tag: 1.2.0
 License: MIT
 License URI: https://raw.githubusercontent.com/tronsha/wp-lightbox-plugin/master/LICENSE
 
@@ -21,7 +21,7 @@ If the plugin is active, the images are now open in the lightbox.
 
 The plugin requires PHP 5.3.2 or newer.
 
-This plugin uses [Lightbox2](https://github.com/lokesh/lightbox2) from Lokesh Dhakar
+This plugin uses [Lightbox2](https://github.com/lokesh/lightbox2) from Lokesh Dhakar and [fancyBox3](https://github.com/fancyapps/fancybox) from Jānis Skarnelis
 
 == Installation ==
 
@@ -33,6 +33,9 @@ This plugin uses [Lightbox2](https://github.com/lokesh/lightbox2) from Lokesh Dh
 1. Select "Media File" at "Link to" when creating a gallery.
 
 == Changelog ==
+
+= 1.2.0 =
+* Added: fancyBox v3.0.47
 
 = 1.1.8 =
 * Added support for media title

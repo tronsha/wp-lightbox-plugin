@@ -19,6 +19,17 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 		<table class="form-table">
 			<tr>
 				<th scope="row">
+					<label for="mpcx_lightbox_lightbox">Lightbox:</label>
+				</th>
+				<td>
+					<select id="mpcx_lightbox_lightbox" name="mpcx_lightbox[lightbox]">
+						<option value="lightbox" <?php selected( $lightbox_options['lightbox'], 'lightbox' ); ?>>Lightbox2</option>
+						<option value="fancybox" <?php selected( $lightbox_options['lightbox'], 'fancybox' ); ?>>fancyBox3</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row">
 					<label for="mpcx_lightbox_title"><?php _e( 'Title', 'mpcx-lightbox' ); ?>:</label>
 				</th>
 				<td>
