@@ -161,5 +161,8 @@ add_action(
 		);
 		wp_enqueue_style( 'mpcx-lightbox' );
 		wp_enqueue_script( 'mpcx-lightbox' );
+		if ( true === is_admin_bar_showing() ) {
+			wp_add_inline_style( 'admin-bar', '#wpadminbar {z-index: 99990;}' );
+		}
 	}
 );
