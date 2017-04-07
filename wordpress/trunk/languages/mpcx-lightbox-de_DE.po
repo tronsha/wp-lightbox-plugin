@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lightbox\n"
-"POT-Creation-Date: 2017-04-03 07:35+0200\n"
-"PO-Revision-Date: 2017-04-03 08:32+0200\n"
+"POT-Creation-Date: 2017-04-07 07:48+0200\n"
+"PO-Revision-Date: 2017-04-07 07:48+0200\n"
 "Last-Translator: \n"
 "Language-Team: Stefan Hüsges\n"
 "Language: de_DE\n"
@@ -16,19 +16,19 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: public\n"
 
-#: admin/options.php:22 admin/options.php:27
+#: admin/options.php:33 admin/options.php:38
 msgid "Title"
 msgstr "Titel"
 
-#: admin/options.php:26
+#: admin/options.php:37
 msgid "Disabled"
 msgstr "Deaktiviert"
 
-#: admin/options.php:28
+#: admin/options.php:39
 msgid "Description"
 msgstr "Beschreibung"
 
-#: admin/options.php:29
+#: admin/options.php:40
 msgid "Caption"
 msgstr "Beschriftung"
 
