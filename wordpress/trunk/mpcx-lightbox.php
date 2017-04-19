@@ -123,7 +123,7 @@ add_filter(
 					break;
 			}
 			if ( false === strpos( $parts[0], $attributeName ) ) {
-				$markup = $parts[0] . ' ' . $attributeName . '=\'' . $title . '\'>' . $parts[1];
+				$markup = $parts[0] . ' ' . $attributeName . '=\'' . esc_attr( $title ) . '\'>' . $parts[1];
 			}
 		}
 
