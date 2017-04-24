@@ -7,7 +7,7 @@ Stable tag: 1.2.0
 License: MIT
 License URI: https://raw.githubusercontent.com/tronsha/wp-lightbox-plugin/master/LICENSE
 
-Just a Lightbox Plugin
+Lightbox for Wordpress Gallery
 
 == Description ==
 
