@@ -3,7 +3,7 @@ Contributors: DeusTron
 Tags: lightbox, responsive, jquery, plugin
 Requires at least: 4.0
 Tested up to: 4.7
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: MIT
 License URI: https://raw.githubusercontent.com/tronsha/wp-lightbox-plugin/master/LICENSE
 
@@ -33,6 +33,9 @@ This plugin uses [Lightbox2](https://github.com/lokesh/lightbox2) from Lokesh Dh
 1. Select "Media File" at "Link to" when creating a gallery.
 
 == Changelog ==
+
+= 1.2.1 =
+* Added support for standalone images
 
 = 1.2.0 =
 * Added: fancyBox v3.0.47

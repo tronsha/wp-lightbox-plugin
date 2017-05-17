@@ -1,5 +1,6 @@
 /*!
  * WordPress Lightbox Plugin
+ * Fancybox to Wordpress Gallery
  * Copyright 2017 Stefan Hüsges
  * MIT License
  * https://github.com/tronsha/wp-lightbox-plugin
