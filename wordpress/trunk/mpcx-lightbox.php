@@ -89,6 +89,28 @@ if ( true === is_admin() ) {
 		5
 	);
 
+	add_filter(
+		'image_send_to_editor',
+		function ( $html, $id, $caption, $title, $align, $url, $size, $alt ) {
+			$_post        = get_post( $id );
+			$_title       = $_post->post_title;
+			$_description = $_post->post_content;
+			$_caption     = $_post->post_excerpt;
+			$parts        = explode( '>', $html, 2 );
+			if ( false === empty( $parts[0] ) && false === empty( $parts[1] ) ) {
+				$html = $parts[0];
+				$html .= empty( $_title ) === false ? ' data-media-title=\'' . esc_attr( $_title ) . '\'' : '';
+				$html .= empty( $_description ) === false ? ' data-media-description=\'' . esc_attr( $_description ) . '\'' : '';
+				$html .= empty( $_caption ) === false ? ' data-media-caption=\'' . esc_attr( $_caption ) . '\'' : '';
+				$html .= '>' . $parts[1];
+			}
+
+			return $html;
+		},
+		10,
+		9
+	);
+
 }
 
 add_filter(
