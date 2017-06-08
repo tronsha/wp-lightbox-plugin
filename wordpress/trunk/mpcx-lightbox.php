@@ -8,7 +8,7 @@
  * Plugin Name:       Lightbox
  * Plugin URI:        https://github.com/tronsha/wp-lightbox-plugin
  * Description:       Lightbox Plugin
- * Version:           1.2.1
+ * Version:           1.2.2
  * Author:            Stefan Hüsges
  * Author URI:        http://www.mpcx.net/
  * Copyright:         Stefan Hüsges
@@ -20,7 +20,7 @@
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-define( 'MPCX_LIGHTBOX_VERSION', '1.2.1' );
+define( 'MPCX_LIGHTBOX_VERSION', '1.2.2' );
 
 load_plugin_textdomain( 'mpcx-lightbox', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 
@@ -89,45 +89,23 @@ if ( true === is_admin() ) {
 		5
 	);
 
-	add_filter(
-		'image_send_to_editor',
-		function ( $html, $id, $caption, $title, $align, $url, $size, $alt ) {
-			$_post        = get_post( $id );
-			$_title       = $_post->post_title;
-			$_description = $_post->post_content;
-			$_caption     = $_post->post_excerpt;
-			$parts        = explode( '>', $html, 2 );
-			if ( false === empty( $parts[0] ) && false === empty( $parts[1] ) ) {
-				$html = $parts[0];
-				$html .= empty( $_title ) === false ? ' data-media-title=\'' . esc_attr( $_title ) . '\'' : '';
-				$html .= empty( $_description ) === false ? ' data-media-description=\'' . esc_attr( $_description ) . '\'' : '';
-				$html .= empty( $_caption ) === false ? ' data-media-caption=\'' . esc_attr( $_caption ) . '\'' : '';
-				$html .= '>' . $parts[1];
-			}
-
-			return $html;
-		},
-		10,
-		9
-	);
-
 }
 
 add_filter(
 	'wp_get_attachment_link',
 	function ( $markup, $id, $size, $permalink, $icon, $text ) {
-		$lightbox_options = get_option( 'mpcx_lightbox' );
-		$title_id         = intval( $lightbox_options['title'] );
-		$_post            = get_post( $id );
-		switch ( $title_id ) {
+		$options = get_option( 'mpcx_lightbox' );
+		$titleId = intval( $options['title'] );
+		$post    = get_post( $id );
+		switch ( $titleId ) {
 			case 1:
-				$title = $_post->post_title;
+				$title = $post->post_title;
 				break;
 			case 2:
-				$title = $_post->post_content;
+				$title = $post->post_content;
 				break;
 			case 3:
-				$title = $_post->post_excerpt;
+				$title = $post->post_excerpt;
 				break;
 			case 0:
 			default:
@@ -135,7 +113,7 @@ add_filter(
 		}
 		$parts = explode( '>', $markup, 2 );
 		if ( false === empty( $title ) && false === empty( $parts[0] ) && false === empty( $parts[1] ) ) {
-			switch ( $lightbox_options['lightbox'] ) {
+			switch ( $options['lightbox'] ) {
 				case 'fancybox':
 					$attributeName = 'data-caption';
 					break;
@@ -158,8 +136,8 @@ add_filter(
 add_action(
 	'wp_enqueue_scripts',
 	function () {
-		$lightbox_options = get_option( 'mpcx_lightbox' );
-		switch ( $lightbox_options['lightbox'] ) {
+		$options = get_option( 'mpcx_lightbox' );
+		switch ( $options['lightbox'] ) {
 			case 'fancybox':
 				$fileName = 'fancybox';
 				break;
@@ -181,10 +159,60 @@ add_action(
 			MPCX_LIGHTBOX_VERSION,
 			true
 		);
+		wp_register_script(
+			'mpcx-images',
+			plugin_dir_url( __FILE__ ) . 'public/js/images.min.js',
+			array( 'jquery' ),
+			MPCX_LIGHTBOX_VERSION,
+			true
+		);
 		wp_enqueue_style( 'mpcx-lightbox' );
 		wp_enqueue_script( 'mpcx-lightbox' );
+		wp_enqueue_script( 'mpcx-images' );
 		if ( true === is_admin_bar_showing() ) {
 			wp_add_inline_style( 'admin-bar', '#wpadminbar {z-index: 99990;}' );
 		}
 	}
 );
+
+add_action(
+	'wp_head',
+	function () {
+		$outputVar        = array();
+		$outputVar[]      = 'window.lbAjaxUrl = "' . admin_url( 'admin-ajax.php' ) . '"';
+		$lightbox_options = get_option( 'mpcx_lightbox' );
+		if ( $lightbox_options['lightbox'] === 'fancybox' ) {
+			$outputVar[] = 'window.lbDataLightbox = "fancybox"';
+			$outputVar[] = 'window.lbDataTitle = "caption"';
+		} else {
+			$outputVar[] = 'window.lbDataLightbox = "lightbox"';
+			$outputVar[] = 'window.lbDataTitle = "title"';
+		}
+		echo "<script>\n" . implode( ";\n", $outputVar ) . ";\n</script>\n";
+	}
+);
+
+function lightbox_get_image_title() {
+	$options = get_option( 'mpcx_lightbox' );
+	$titleId = intval( $options['title'] );
+	$post    = get_post( intval( $_POST['postId'] ) );
+	switch ( $titleId ) {
+		case 1:
+			$title = $post->post_title;
+			break;
+		case 2:
+			$title = $post->post_content;
+			break;
+		case 3:
+			$title = $post->post_excerpt;
+			break;
+		case 0:
+		default:
+			$title = '';
+			break;
+	}
+	die( json_encode( $title ) );
+}
+
+add_action( 'wp_ajax_lightbox_get_image_title', 'lightbox_get_image_title' );
+add_action( 'wp_ajax_nopriv_lightbox_get_image_title', 'lightbox_get_image_title' );
