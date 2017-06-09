@@ -16,7 +16,7 @@ jQuery(document).ready(function () {
     jQuery('a > img').each(function () {
         if (jQuery(this).parents('.gallery').length === 0) {
             var $img = jQuery(this);
-            var id = $img.attr('src').split(/[^a-zA-Z0-9]+/).join('-') + '-' + Math.floor((Math.random() * 900000) + 100001);
+            var id = $img.attr('src').split(/[^a-zA-Z0-9]+/).join('-') + '-' + Math.floor((Math.random() * 900000) + 100000);
             var $a = $img.parent('a');
             if ($a.attr('href').match(/\.(jpeg|jpg|gif|png)$/) !== null) {
                 $a.attr('data-' + window.lbDataLightbox, id);
@@ -28,11 +28,15 @@ jQuery(document).ready(function () {
                         jQuery.ajax({
                             type: 'POST',
                             url: window.lbAjaxUrl,
+                            dataType: 'json',
                             data: {
                                 'postId': postId,
                                 'action': 'lightbox_get_image_title'
-                            }, success: function (result) {
-                                $a.attr('data-' + window.lbDataTitle, result);
+                            },
+                            success: function (result) {
+                                if (result !== '') {
+                                    $a.attr('data-' + window.lbDataTitle, result);
+                                }
                             },
                             error: function () {
                             }
