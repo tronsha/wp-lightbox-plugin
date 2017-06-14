@@ -136,14 +136,20 @@ add_filter(
 add_action(
 	'wp_enqueue_scripts',
 	function () {
-		$options = get_option( 'mpcx_lightbox' );
+		$jsData            = array();
+		$jsData['ajaxUrl'] = admin_url( 'admin-ajax.php' );
+		$options           = get_option( 'mpcx_lightbox' );
 		switch ( $options['lightbox'] ) {
 			case 'fancybox':
-				$fileName = 'fancybox';
+				$fileName           = 'fancybox';
+				$jsData['lightbox'] = 'fancybox';
+				$jsData['title']    = 'caption';
 				break;
 			case 'lightbox':
 			default:
-				$fileName = 'lightbox';
+				$fileName           = 'lightbox';
+				$jsData['lightbox'] = 'lightbox';
+				$jsData['title']    = 'title';
 				break;
 		}
 		wp_register_style(
@@ -160,7 +166,7 @@ add_action(
 			true
 		);
 		wp_register_script(
-			'mpcx-images',
+			'mpcx-images2lightbox',
 			plugin_dir_url( __FILE__ ) . 'public/js/images.min.js',
 			array( 'jquery' ),
 			MPCX_LIGHTBOX_VERSION,
@@ -168,27 +174,11 @@ add_action(
 		);
 		wp_enqueue_style( 'mpcx-lightbox' );
 		wp_enqueue_script( 'mpcx-lightbox' );
-		wp_enqueue_script( 'mpcx-images' );
+		wp_enqueue_script( 'mpcx-images2lightbox' );
+		wp_localize_script( 'mpcx-images2lightbox', 'lbData', $jsData );
 		if ( true === is_admin_bar_showing() ) {
 			wp_add_inline_style( 'admin-bar', '#wpadminbar {z-index: 99990;}' );
 		}
-	}
-);
-
-add_action(
-	'wp_head',
-	function () {
-		$outputVar        = array();
-		$outputVar[]      = 'window.lbAjaxUrl = "' . admin_url( 'admin-ajax.php' ) . '"';
-		$lightbox_options = get_option( 'mpcx_lightbox' );
-		if ( $lightbox_options['lightbox'] === 'fancybox' ) {
-			$outputVar[] = 'window.lbDataLightbox = "fancybox"';
-			$outputVar[] = 'window.lbDataTitle = "caption"';
-		} else {
-			$outputVar[] = 'window.lbDataLightbox = "lightbox"';
-			$outputVar[] = 'window.lbDataTitle = "title"';
-		}
-		echo "<script>\n" . implode( ";\n", $outputVar ) . ";\n</script>\n";
 	}
 );
 

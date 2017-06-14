@@ -9,7 +9,7 @@ jQuery(document).ready(function () {
         var id = jQuery(this).attr('id');
         jQuery(this).find('.gallery-icon a').each(function () {
             if (jQuery(this).attr('href').indexOf('attachment_id') === -1) {
-                jQuery(this).attr('data-' + window.lbDataLightbox, id);
+                jQuery(this).attr('data-' + lbData.lightbox, id);
             }
         });
     });
@@ -19,7 +19,7 @@ jQuery(document).ready(function () {
             var id = $img.attr('src').split(/[^a-zA-Z0-9]+/).join('-') + '-' + Math.floor((Math.random() * 900000) + 100000);
             var $a = $img.parent('a');
             if ($a.attr('href').match(/\.(jpeg|jpg|gif|png)$/) !== null) {
-                $a.attr('data-' + window.lbDataLightbox, id);
+                $a.attr('data-' + lbData.lightbox, id);
                 var classArray = $img.attr('class').split(' ');
                 var postId = '';
                 for (var i = 0, len = classArray.length; i < len; i++) {
@@ -27,7 +27,7 @@ jQuery(document).ready(function () {
                         postId = parseInt(classArray[i].replace('wp-image-', ''));
                         jQuery.ajax({
                             type: 'POST',
-                            url: window.lbAjaxUrl,
+                            url: lbData.ajaxUrl,
                             dataType: 'json',
                             data: {
                                 'postId': postId,
@@ -35,7 +35,7 @@ jQuery(document).ready(function () {
                             },
                             success: function (result) {
                                 if (result !== '') {
-                                    $a.attr('data-' + window.lbDataTitle, result);
+                                    $a.attr('data-' + lbData.title, result);
                                 }
                             },
                             error: function () {
