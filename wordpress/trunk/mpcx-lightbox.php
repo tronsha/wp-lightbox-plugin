@@ -27,7 +27,7 @@ load_plugin_textdomain( 'mpcx-lightbox', false, dirname( plugin_basename( __FILE
 register_activation_hook(
 	__FILE__,
 	function () {
-		add_option( 'mpcx_lightbox', array( 'version' => MPCX_LIGHTBOX_VERSION, 'lightbox' => 'lightbox', 'title' => 0 ) );
+		add_option( 'mpcx_lightbox', array( 'version' => MPCX_LIGHTBOX_VERSION, 'lightbox' => 'lightbox', 'title' => 0, 'ajax' => 0 ) );
 	}
 );
 
