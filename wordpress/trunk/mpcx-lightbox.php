@@ -139,6 +139,9 @@ add_action(
 		$jsData            = array();
 		$jsData['ajaxUrl'] = admin_url( 'admin-ajax.php' );
 		$options           = get_option( 'mpcx_lightbox' );
+		if ( $options['ajax'] === '1' ) {
+			$jsData['ajax'] = true;
+		}
 		switch ( $options['lightbox'] ) {
 			case 'fancybox':
 				$fileName           = 'fancybox';
