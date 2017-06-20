@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lightbox\n"
-"POT-Creation-Date: 2017-04-07 07:48+0200\n"
-"PO-Revision-Date: 2017-04-07 07:48+0200\n"
+"POT-Creation-Date: 2017-06-20 07:43+0200\n"
+"PO-Revision-Date: 2017-06-20 07:47+0200\n"
 "Last-Translator: \n"
 "Language-Team: Stefan Hüsges\n"
 "Language: de_DE\n"
@@ -31,6 +31,10 @@ msgstr "Beschreibung"
 #: admin/options.php:40
 msgid "Caption"
 msgstr "Beschriftung"
+
+#: admin/options.php:50
+msgid "Enable this option for title support at standalone images."
+msgstr "Aktivieren Sie diese Option für die Titelunterstützung bei Einzelbildern."
 
 #: mpcx-lightbox.php:82
 msgid "Settings"
