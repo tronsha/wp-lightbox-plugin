@@ -16,15 +16,19 @@ jQuery(document).ready(function () {
     jQuery('a > img').each(function () {
         if (0 === jQuery(this).parents('.gallery').length) {
             var $img = jQuery(this);
-            var id = $img.attr('src').split(/[^a-zA-Z0-9]+/).join('-') + '-' + Math.floor((Math.random() * 900000) + 100000);
+            var id = Math.floor((Math.random() * 900000) + 100000);
+            var src = $img.attr('src');
+            if (undefined !== src) {
+                id = src.split(/[^a-zA-Z0-9]+/).join('-') + '-' + id;
+            }
             var $a = $img.parent('a');
             if (undefined === $a.attr('data-' + lbData.lightbox) && null !== $a.attr('href').match(/\.(jpeg|jpg|gif|png)$/)) {
                 $a.attr('data-' + lbData.lightbox, id);
                 if (1 === parseInt(lbData.ajax)) {
-                    var classAttr = $img.attr('class');
                     var classArray = [];
+                    var classAttr = $img.attr('class');
                     if (undefined !== classAttr) {
-                        classArray = $img.attr('class').split(' ');
+                        classArray = classAttr.split(' ');
                     }
                     var postId = '';
                     for (var i = 0, len = classArray.length; i < len; i++) {
