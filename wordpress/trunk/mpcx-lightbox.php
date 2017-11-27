@@ -8,7 +8,7 @@
  * Plugin Name:       Lightbox
  * Plugin URI:        https://github.com/tronsha/wp-lightbox-plugin
  * Description:       Lightbox Plugin
- * Version:           1.2.2
+ * Version:           1.2.3
  * Author:            Stefan Hüsges
  * Author URI:        http://www.mpcx.net/
  * Copyright:         Stefan Hüsges
@@ -20,7 +20,7 @@
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-define( 'MPCX_LIGHTBOX_VERSION', '1.2.2' );
+define( 'MPCX_LIGHTBOX_VERSION', '1.2.3' );
 
 load_plugin_textdomain( 'mpcx-lightbox', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 

@@ -3,7 +3,7 @@ Contributors: DeusTron
 Tags: lightbox, responsive, jquery, plugin
 Requires at least: 4.0
 Tested up to: 4.9
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: MIT
 License URI: https://raw.githubusercontent.com/tronsha/wp-lightbox-plugin/master/LICENSE
 
