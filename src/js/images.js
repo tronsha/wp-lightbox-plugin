@@ -18,10 +18,14 @@ jQuery(document).ready(function () {
             var $img = jQuery(this);
             var id = $img.attr('src').split(/[^a-zA-Z0-9]+/).join('-') + '-' + Math.floor((Math.random() * 900000) + 100000);
             var $a = $img.parent('a');
-            if (null !== $a.attr('href').match(/\.(jpeg|jpg|gif|png)$/)) {
+            if (undefined === $a.attr('data-' + lbData.lightbox) && null !== $a.attr('href').match(/\.(jpeg|jpg|gif|png)$/)) {
                 $a.attr('data-' + lbData.lightbox, id);
                 if (1 === parseInt(lbData.ajax)) {
-                    var classArray = $img.attr('class').split(' ');
+                    var classAttr = $img.attr('class');
+                    var classArray = [];
+                    if (undefined !== classAttr) {
+                        classArray = $img.attr('class').split(' ');
+                    }
                     var postId = '';
                     for (var i = 0, len = classArray.length; i < len; i++) {
                         if (0 === classArray[i].indexOf('wp-image-')) {
