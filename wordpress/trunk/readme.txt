@@ -34,6 +34,11 @@ This plugin uses [Lightbox2](https://github.com/lokesh/lightbox2) from Lokesh Dh
 
 == Changelog ==
 
+= 1.2.3 =
+* Update: Lightbox v2.10.0
+* Update existing lightbox attributes will not override 
+* Fix for javascript error if tag attribute not exists
+
 = 1.2.2 =
 * Added support for media title for standalone images
 
