@@ -1,7 +1,7 @@
 === Lightbox ===
 Contributors: DeusTron
 Tags: lightbox, responsive, jquery, plugin
-Requires at least: 4.0
+Requires at least: 3.3
 Tested up to: 4.9
 Stable tag: 1.2.3
 License: MIT
