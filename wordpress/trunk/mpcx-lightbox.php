@@ -27,7 +27,7 @@ load_plugin_textdomain( 'mpcx-lightbox', false, dirname( plugin_basename( __FILE
 register_activation_hook(
 	__FILE__,
 	function () {
-		add_option( 'mpcx_lightbox', array( 'version' => MPCX_LIGHTBOX_VERSION, 'lightbox' => 'lightbox', 'title' => 0, 'ajax' => 0 ) );
+		add_option( 'mpcx_lightbox', array( 'version' => MPCX_LIGHTBOX_VERSION, 'lightbox' => 'lightbox', 'title' => 0, 'ajax' => 0, 'justifiedgallery' => 0 ) );
 	}
 );
 
@@ -139,8 +139,11 @@ add_action(
 		$jsData            = array();
 		$jsData['ajaxUrl'] = admin_url( 'admin-ajax.php' );
 		$options           = get_option( 'mpcx_lightbox' );
-		if ( $options['ajax'] === '1' ) {
+		if ( '1' === $options['ajax'] ) {
 			$jsData['ajax'] = true;
+		}
+		if ( '1' === $options['justified'] ) {
+			$jsData['justified'] = true;
 		}
 		switch ( $options['lightbox'] ) {
 			case 'fancybox':
@@ -181,6 +184,23 @@ add_action(
 		wp_localize_script( 'mpcx-images2lightbox', 'lbData', $jsData );
 		if ( true === is_admin_bar_showing() ) {
 			wp_add_inline_style( 'admin-bar', '#wpadminbar {z-index: 99990;}' );
+		}
+		if ( '1' === $options['justified'] ) {
+			wp_register_style(
+				'mpcx-justifiedgallery',
+				plugin_dir_url( __FILE__ ) . 'public/css/justifiedgallery.min.css',
+				array(),
+				MPCX_LIGHTBOX_VERSION
+			);
+			wp_register_script(
+				'mpcx-justifiedgallery',
+				plugin_dir_url( __FILE__ ) . 'public/js/justifiedgallery.min.js',
+				array( 'jquery' ),
+				MPCX_LIGHTBOX_VERSION,
+				true
+			);
+			wp_enqueue_style( 'mpcx-justifiedgallery' );
+			wp_enqueue_script( 'mpcx-justifiedgallery' );
 		}
 	}
 );

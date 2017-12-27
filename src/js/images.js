@@ -12,6 +12,14 @@ jQuery(document).ready(function () {
                 jQuery(this).attr('data-' + lbData.lightbox, id);
             }
         });
+        if (1 === parseInt(lbData.justified)) {
+            var $div = jQuery(this);
+            $div.children('figure').each(function() {
+                //$div.appendChild(jQuery(this).find('a'));
+                //jQuery(this).remove();
+            });
+            jQuery(this).justifiedGallery();
+        }
     });
     jQuery('a > img').each(function () {
         if (0 === jQuery(this).parents('.gallery').length) {

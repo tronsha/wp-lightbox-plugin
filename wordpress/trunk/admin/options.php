@@ -50,6 +50,14 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 					<p class="description" id="mpcx_lightbox_ajax-description"><?php printf( __( 'Enable this option for title support at standalone images.', 'mpcx-lightbox' ) ); ?></p>
 				</td>
 			</tr>
+			<tr>
+				<th scope="row">
+					<label for="mpcx_lightbox_justified">Justified Gallery:</label>
+				</th>
+				<td>
+					<input type="checkbox" id="mpcx_lightbox_justified" name="mpcx_lightbox[justified]" value="1"<?php checked( $lightbox_options['justified'], 1 ); ?> />
+				</td>
+			</tr>
 		</table>
 		<?php submit_button(); ?>
 	</form>
