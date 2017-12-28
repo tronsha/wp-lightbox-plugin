@@ -6,19 +6,22 @@
  */
 jQuery(document).ready(function () {
     jQuery('.gallery').each(function () {
-        var id = jQuery(this).attr('id');
-        jQuery(this).find('.gallery-icon a').each(function () {
+        var $div = jQuery(this);
+        var id = $div.attr('id');
+        $div.find('.gallery-icon a').each(function () {
             if (-1 === jQuery(this).attr('href').indexOf('attachment_id')) {
                 jQuery(this).attr('data-' + lbData.lightbox, id);
             }
         });
         if (1 === parseInt(lbData.justified)) {
-            var $div = jQuery(this);
-            $div.children('figure').each(function() {
-                //$div.appendChild(jQuery(this).find('a'));
-                //jQuery(this).remove();
+            $div.find('.gallery-icon a').each(function () {
+                var $a = jQuery(this);
+                while ($a.parent().attr('id') !== $div.attr('id')) {
+                    $a.unwrap();
+                }
             });
-            jQuery(this).justifiedGallery();
+            $div.find('figcaption').remove();
+            jQuery(this).justifiedGallery({margins : 6});
         }
     });
     jQuery('a > img').each(function () {
