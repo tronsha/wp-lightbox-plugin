@@ -34,6 +34,10 @@ This plugin uses [Lightbox2](https://github.com/lokesh/lightbox2) from Lokesh Dh
 
 == Changelog ==
 
+= 1.2.4 =
+* Added: Justified Gallery v3.6.3
+* Update: fancyBox v3.2.5
+
 = 1.2.3 =
 * Update: Lightbox v2.10.0
 * Update existing lightbox attributes will not override 

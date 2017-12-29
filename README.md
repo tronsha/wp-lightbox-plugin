@@ -4,7 +4,7 @@ Select `Media File` at `Link to` when creating a gallery.
 
 If the plugin is active, the images are now open in the lightbox.
 
-This plugin uses [Lightbox2][3] from Lokesh Dhakar and [fancyBox3][4] from Jānis Skarnelis
+This plugin uses [Lightbox2][3], [fancyBox3][4] and [Justified Gallery][5]
 
 ## Requirements
 
@@ -31,7 +31,7 @@ This plugin uses [Lightbox2][3] from Lokesh Dhakar and [fancyBox3][4] from Jāni
 [2]: https://github.com/tronsha
 [3]: https://github.com/lokesh/lightbox2
 [4]: https://github.com/fancyapps/fancybox
-[5]: https://github.com/miromannino/Justified-Gallery/releases
+[5]: https://github.com/miromannino/Justified-Gallery
 [6]: https://wordpress.org/about/requirements/
 [7]: http://php.net/
 [8]: https://wordpress.org/plugins/mpcx-lightbox/

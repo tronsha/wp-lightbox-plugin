@@ -14,13 +14,21 @@ jQuery(document).ready(function () {
             }
         });
         if (1 === parseInt(lbData.justified)) {
+            $div.children('.gallery-item').each(function() {
+                var $item = jQuery(this);
+                var $caption = $item.children('.gallery-caption');
+                var caption = $caption.text();
+                $caption.remove();
+                if (caption.length > 0) {
+                    $item.find('.gallery-icon a').append('<div class="caption">' + caption + '</div>');
+                }
+            });
             $div.find('.gallery-icon a').each(function () {
                 var $a = jQuery(this);
                 while ($a.parent().attr('id') !== $div.attr('id')) {
                     $a.unwrap();
                 }
             });
-            $div.find('figcaption').remove();
             jQuery(this).justifiedGallery({margins : 6});
         }
     });
