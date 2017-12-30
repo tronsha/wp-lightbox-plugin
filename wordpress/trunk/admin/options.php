@@ -41,18 +41,24 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 					</select>
 				</td>
 			</tr>
+		</table>
+                <h2 class="title"><?php _e( 'Standalone Images', 'mpcx-lightbox' ); ?></h2>
+		<table class="form-table">
 			<tr>
 				<th scope="row">
-					<label for="mpcx_lightbox_ajax">Ajax:</label>
+					<label for="mpcx_lightbox_ajax"><?php _e( 'Ajax', 'mpcx-lightbox' ); ?>:</label>
 				</th>
 				<td>
 					<input type="checkbox" id="mpcx_lightbox_ajax" name="mpcx_lightbox[ajax]" value="1"<?php checked( $lightbox_options['ajax'], 1 ); ?> />
-					<p class="description" id="mpcx_lightbox_ajax-description"><?php printf( __( 'Enable this option for title support at standalone images.', 'mpcx-lightbox' ) ); ?></p>
+					<p class="description" id="mpcx_lightbox_ajax-description"><?php printf( __( 'Enable this for title support.', 'mpcx-lightbox' ) ); ?></p>
 				</td>
 			</tr>
+		</table>
+                <h2 class="title">Justified Gallery</h2>
+                <table class="form-table">
 			<tr>
 				<th scope="row">
-					<label for="mpcx_lightbox_justified">Justified Gallery:</label>
+					<label for="mpcx_lightbox_justified"><?php _e( 'Enable', 'mpcx-lightbox' ); ?>:</label>
 				</th>
 				<td>
 					<input type="checkbox" id="mpcx_lightbox_justified" name="mpcx_lightbox[justified]" value="1"<?php checked( $lightbox_options['justified'], 1 ); ?> />
