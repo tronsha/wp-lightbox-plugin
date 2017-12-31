@@ -41,9 +41,30 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 					</select>
 				</td>
 			</tr>
+                </table>
+                <h2 class="title"><?php _e( 'Gallery', 'mpcx-lightbox' ); ?></h2>
+		<table class="form-table">
+			<tr>
+				<th scope="row">
+					<label for="mpcx_lightbox_gallery"><?php _e( 'Enable', 'mpcx-lightbox' ); ?>:</label>
+				</th>
+				<td>
+					<input type="checkbox" id="mpcx_lightbox_gallery" name="mpcx_lightbox[gallery]" value="1"<?php checked( $lightbox_options['gallery'], 1 ); ?> />
+                                        <p class="description" id="mpcx_lightbox_gallery-description"><?php printf( __( 'Enable lightbox support for gallery.', 'mpcx-lightbox' ) ); ?></p>
+				</td>
+			</tr>
 		</table>
                 <h2 class="title"><?php _e( 'Standalone Images', 'mpcx-lightbox' ); ?></h2>
 		<table class="form-table">
+                    	<tr>
+				<th scope="row">
+					<label for="mpcx_lightbox_standalone"><?php _e( 'Enable', 'mpcx-lightbox' ); ?>:</label>
+				</th>
+				<td>
+					<input type="checkbox" id="mpcx_lightbox_standalone" name="mpcx_lightbox[standalone]" value="1"<?php checked( $lightbox_options['standalone'], 1 ); ?> />
+                                        <p class="description" id="mpcx_lightbox_standalone-description"><?php printf( __( 'Enable lightbox support for standalone images.', 'mpcx-lightbox' ) ); ?></p>
+				</td>
+			</tr>
 			<tr>
 				<th scope="row">
 					<label for="mpcx_lightbox_ajax"><?php _e( 'Ajax', 'mpcx-lightbox' ); ?>:</label>

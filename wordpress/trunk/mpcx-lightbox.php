@@ -27,7 +27,7 @@ load_plugin_textdomain( 'mpcx-lightbox', false, dirname( plugin_basename( __FILE
 register_activation_hook(
 	__FILE__,
 	function () {
-		add_option( 'mpcx_lightbox', array( 'version' => MPCX_LIGHTBOX_VERSION, 'lightbox' => 'lightbox', 'title' => 0, 'ajax' => 0, 'justifiedgallery' => 0 ) );
+		add_option( 'mpcx_lightbox', array( 'version' => MPCX_LIGHTBOX_VERSION, 'gallery' => 1, 'standalone' => 1, 'lightbox' => 'lightbox', 'title' => 0, 'ajax' => 0, 'justifiedgallery' => 0 ) );
 	}
 );
 
@@ -139,6 +139,12 @@ add_action(
 		$jsData            = array();
 		$jsData['ajaxUrl'] = admin_url( 'admin-ajax.php' );
 		$options           = get_option( 'mpcx_lightbox' );
+                if ( '1' === $options['gallery'] ) {
+			$jsData['gallery'] = true;
+		}
+                if ( '1' === $options['standalone'] ) {
+			$jsData['standalone'] = true;
+		}
 		if ( '1' === $options['ajax'] ) {
 			$jsData['ajax'] = true;
 		}
