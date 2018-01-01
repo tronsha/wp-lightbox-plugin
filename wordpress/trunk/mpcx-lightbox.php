@@ -27,7 +27,7 @@ load_plugin_textdomain( 'mpcx-lightbox', false, dirname( plugin_basename( __FILE
 register_activation_hook(
 	__FILE__,
 	function () {
-		add_option( 'mpcx_lightbox', array( 'version' => MPCX_LIGHTBOX_VERSION, 'gallery' => 1, 'standalone' => 1, 'lightbox' => 'lightbox', 'title' => 0, 'ajax' => 0, 'justifiedgallery' => 0 ) );
+		add_option( 'mpcx_lightbox', array( 'version' => MPCX_LIGHTBOX_VERSION, 'gallery' => '1', 'standalone' => '1', 'lightbox' => 'lightbox', 'title' => '', 'ajax' => '', 'justifiedgallery' => '' ) );
 	}
 );
 
@@ -139,16 +139,16 @@ add_action(
 		$jsData            = array();
 		$jsData['ajaxUrl'] = admin_url( 'admin-ajax.php' );
 		$options           = get_option( 'mpcx_lightbox' );
-                if ( '1' === $options['gallery'] ) {
+                if ( 1 === valint( $options['gallery'] ) ) {
 			$jsData['gallery'] = true;
 		}
-                if ( '1' === $options['standalone'] ) {
+                if ( 1 === valint( $options['standalone'] ) ) {
 			$jsData['standalone'] = true;
 		}
-		if ( '1' === $options['ajax'] ) {
+		if ( 1 === valint( $options['ajax'] ) ) {
 			$jsData['ajax'] = true;
 		}
-		if ( '1' === $options['justified'] ) {
+		if ( 1 === valint( $options['justified'] ) ) {
 			$jsData['justified'] = true;
 		}
 		switch ( $options['lightbox'] ) {
@@ -191,7 +191,7 @@ add_action(
 		if ( true === is_admin_bar_showing() ) {
 			wp_add_inline_style( 'admin-bar', '#wpadminbar {z-index: 99990;}' );
 		}
-		if ( '1' === $options['justified'] ) {
+		if ( 1 === valint( $options['justified'] ) ) {
 			wp_register_style(
 				'mpcx-justifiedgallery',
 				plugin_dir_url( __FILE__ ) . 'public/css/justifiedgallery.min.css',
