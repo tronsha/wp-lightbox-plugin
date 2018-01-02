@@ -139,16 +139,16 @@ add_action(
 		$jsData            = array();
 		$jsData['ajaxUrl'] = admin_url( 'admin-ajax.php' );
 		$options           = get_option( 'mpcx_lightbox' );
-                if ( 1 === valint( $options['gallery'] ) ) {
+                if ( 1 === intval( $options['gallery'] ) ) {
 			$jsData['gallery'] = true;
 		}
-                if ( 1 === valint( $options['standalone'] ) ) {
+                if ( 1 === intval( $options['standalone'] ) ) {
 			$jsData['standalone'] = true;
 		}
-		if ( 1 === valint( $options['ajax'] ) ) {
+		if ( 1 === intval( $options['ajax'] ) ) {
 			$jsData['ajax'] = true;
 		}
-		if ( 1 === valint( $options['justified'] ) ) {
+		if ( 1 === intval( $options['justified'] ) ) {
 			$jsData['justified'] = true;
 		}
 		switch ( $options['lightbox'] ) {
@@ -191,7 +191,7 @@ add_action(
 		if ( true === is_admin_bar_showing() ) {
 			wp_add_inline_style( 'admin-bar', '#wpadminbar {z-index: 99990;}' );
 		}
-		if ( 1 === valint( $options['justified'] ) ) {
+		if ( 1 === intval( $options['justified'] ) ) {
 			wp_register_style(
 				'mpcx-justifiedgallery',
 				plugin_dir_url( __FILE__ ) . 'public/css/justifiedgallery.min.css',
