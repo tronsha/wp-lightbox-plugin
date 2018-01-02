@@ -3,7 +3,7 @@ Contributors: DeusTron
 Tags: lightbox, responsive, jquery, plugin
 Requires at least: 3.3
 Tested up to: 4.9
-Stable tag: 1.2.3
+Stable tag: 1.2.4
 License: MIT
 License URI: https://raw.githubusercontent.com/tronsha/wp-lightbox-plugin/master/LICENSE
 
@@ -21,7 +21,7 @@ If the plugin is active, the images are now open in the lightbox.
 
 The plugin requires PHP 5.3.2 or newer.
 
-This plugin uses [Lightbox2](https://github.com/lokesh/lightbox2) from Lokesh Dhakar and [fancyBox3](https://github.com/fancyapps/fancybox) from Jānis Skarnelis
+This plugin uses [Lightbox2](https://github.com/lokesh/lightbox2) from Lokesh Dhakar, [fancyBox3](https://github.com/fancyapps/fancybox) from Jānis Skarnelis and [Justified Gallery](https://github.com/miromannino/Justified-Gallery) from Miro Mannino.
 
 == Installation ==
 
