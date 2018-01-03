@@ -30,7 +30,7 @@ jQuery(document).ready(function () {
                         $a.unwrap();
                     }
                 });
-                jQuery(this).justifiedGallery({margins : 6});
+                jQuery(this).justifiedGallery({margins : parseInt(lbData.justified_margins)});
             }
         });
     }
