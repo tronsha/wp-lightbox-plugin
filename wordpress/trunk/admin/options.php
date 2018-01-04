@@ -93,6 +93,14 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
                                 	<input type="number" min="0" id="mpcx_lightbox_justified_margins" name="mpcx_lightbox[justified_margins]" value="<?php echo $lightbox_options['justified_margins']; ?>" />
 				</td>
 			</tr>
+                        <tr>
+				<th scope="row">
+					<label for="mpcx_lightbox_justified_captions"><?php _e( 'Captions', 'mpcx-lightbox' ); ?>:</label>
+				</th>
+				<td>
+					<input type="checkbox" id="mpcx_lightbox_justified_captions" name="mpcx_lightbox[justified_captions]" value="1"<?php checked( $lightbox_options['justified_captions'], 1 ); ?> />
+				</td>
+			</tr>
 		</table>
 		<?php submit_button(); ?>
 	</form>

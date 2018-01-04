@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lightbox\n"
-"POT-Creation-Date: 2017-12-31 17:31+0100\n"
+"POT-Creation-Date: 2018-01-04 08:03+0100\n"
 "PO-Revision-Date: 2017-04-01 15:31+0100\n"
 "Last-Translator: \n"
 "Language-Team: Stefan Hüsges\n"
@@ -60,6 +60,14 @@ msgstr ""
 msgid "Enable this for title support."
 msgstr ""
 
-#: mpcx-lightbox.php:82
+#: admin/options.php:90
+msgid "Margins"
+msgstr ""
+
+#: admin/options.php:98
+msgid "Captions"
+msgstr ""
+
+#: mpcx-lightbox.php:95
 msgid "Settings"
 msgstr ""

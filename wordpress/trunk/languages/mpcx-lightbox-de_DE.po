@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lightbox\n"
-"POT-Creation-Date: 2017-12-31 17:31+0100\n"
-"PO-Revision-Date: 2017-12-31 17:33+0100\n"
+"POT-Creation-Date: 2018-01-04 08:03+0100\n"
+"PO-Revision-Date: 2018-01-04 08:05+0100\n"
 "Last-Translator: \n"
 "Language-Team: Stefan Hüsges\n"
 "Language: de_DE\n"
@@ -60,7 +60,15 @@ msgstr "Ajax"
 msgid "Enable this for title support."
 msgstr "Aktivieren Sie dies für die Titelunterstützung."
 
-#: mpcx-lightbox.php:82
+#: admin/options.php:90
+msgid "Margins"
+msgstr "Ränder"
+
+#: admin/options.php:98
+msgid "Captions"
+msgstr "Bildunterschriften"
+
+#: mpcx-lightbox.php:95
 msgid "Settings"
 msgstr "Einstellungen"
 

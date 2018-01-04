@@ -27,7 +27,20 @@ load_plugin_textdomain( 'mpcx-lightbox', false, dirname( plugin_basename( __FILE
 register_activation_hook(
 	__FILE__,
 	function () {
-		add_option( 'mpcx_lightbox', array( 'version' => MPCX_LIGHTBOX_VERSION, 'gallery' => '1', 'standalone' => '1', 'lightbox' => 'lightbox', 'title' => '', 'ajax' => '', 'justified' => '', 'justified_margins' => '4' ) );
+		add_option( 
+			'mpcx_lightbox', 
+			array( 
+				'version' => MPCX_LIGHTBOX_VERSION, 
+				'gallery' => '1', 
+				'standalone' => '1', 
+				'lightbox' => 'lightbox', 
+				'title' => '', 
+				'ajax' => '', 
+				'justified' => '', 
+				'justified_margins' => '3', 
+				'justified_captions' => '1' 
+			) 
+		);
 	}
 );
 
@@ -151,6 +164,7 @@ add_action(
 		if ( 1 === intval( $options['justified'] ) ) {
 			$jsData['justified'] = true;
 			$jsData['justified_margins'] = $options['justified_margins'];
+                        $jsData['justified_captions'] = intval($options['justified_captions']);
 		}
 		switch ( $options['lightbox'] ) {
 			case 'fancybox':

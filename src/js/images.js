@@ -30,7 +30,11 @@ jQuery(document).ready(function () {
                         $a.unwrap();
                     }
                 });
-                jQuery(this).justifiedGallery({margins : parseInt(lbData.justified_margins)});
+                console.log(lbData.justified_captions);
+                jQuery(this).justifiedGallery({
+                    margins : parseInt(lbData.justified_margins), 
+                    captions: 1 === parseInt(lbData.justified_captions)
+                });
             }
         });
     }
