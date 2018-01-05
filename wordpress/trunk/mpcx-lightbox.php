@@ -38,7 +38,8 @@ register_activation_hook(
 				'ajax' => '', 
 				'justified' => '', 
 				'justified_margins' => '3', 
-				'justified_captions' => '1' 
+				'justified_captions' => '1',
+                        	'justified_randomize' => '',
 			) 
 		);
 	}
@@ -165,6 +166,7 @@ add_action(
 			$jsData['justified'] = true;
 			$jsData['justified_margins'] = $options['justified_margins'];
                         $jsData['justified_captions'] = intval($options['justified_captions']);
+                        $jsData['justified_randomize'] = intval($options['justified_randomize']);
 		}
 		switch ( $options['lightbox'] ) {
 			case 'fancybox':

@@ -101,6 +101,14 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 					<input type="checkbox" id="mpcx_lightbox_justified_captions" name="mpcx_lightbox[justified_captions]" value="1"<?php checked( $lightbox_options['justified_captions'], 1 ); ?> />
 				</td>
 			</tr>
+                        <tr>
+				<th scope="row">
+					<label for="mpcx_lightbox_justified_randomize"><?php _e( 'Randomize', 'mpcx-lightbox' ); ?>:</label>
+				</th>
+				<td>
+					<input type="checkbox" id="mpcx_lightbox_justified_randomize" name="mpcx_lightbox[justified_randomize]" value="1"<?php checked( $lightbox_options['justified_randomize'], 1 ); ?> />
+				</td>
+			</tr>
 		</table>
 		<?php submit_button(); ?>
 	</form>

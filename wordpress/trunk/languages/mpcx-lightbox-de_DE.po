@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lightbox\n"
-"POT-Creation-Date: 2018-01-04 08:03+0100\n"
-"PO-Revision-Date: 2018-01-04 08:05+0100\n"
+"POT-Creation-Date: 2018-01-05 07:16+0100\n"
+"PO-Revision-Date: 2018-01-05 07:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: Stefan Hüsges\n"
 "Language: de_DE\n"
@@ -68,7 +68,11 @@ msgstr "Ränder"
 msgid "Captions"
 msgstr "Bildunterschriften"
 
-#: mpcx-lightbox.php:95
+#: admin/options.php:106
+msgid "Randomize"
+msgstr "Zufällig"
+
+#: mpcx-lightbox.php:96
 msgid "Settings"
 msgstr "Einstellungen"
 
