@@ -41,8 +41,8 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 					</select>
 				</td>
 			</tr>
-                </table>
-                <h2 class="title"><?php _e( 'Gallery', 'mpcx-lightbox' ); ?></h2>
+		</table>
+		<h2 class="title"><?php _e( 'Gallery', 'mpcx-lightbox' ); ?></h2>
 		<table class="form-table">
 			<tr>
 				<th scope="row">
@@ -50,19 +50,19 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 				</th>
 				<td>
 					<input type="checkbox" id="mpcx_lightbox_gallery" name="mpcx_lightbox[gallery]" value="1"<?php checked( $lightbox_options['gallery'], 1 ); ?> />
-                                        <p class="description" id="mpcx_lightbox_gallery-description"><?php printf( __( 'Enable lightbox support for gallery.', 'mpcx-lightbox' ) ); ?></p>
+					<p class="description" id="mpcx_lightbox_gallery-description"><?php printf( __( 'Enable lightbox support for gallery.', 'mpcx-lightbox' ) ); ?></p>
 				</td>
 			</tr>
 		</table>
-                <h2 class="title"><?php _e( 'Standalone Images', 'mpcx-lightbox' ); ?></h2>
+		<h2 class="title"><?php _e( 'Standalone Images', 'mpcx-lightbox' ); ?></h2>
 		<table class="form-table">
-                    	<tr>
+			<tr>
 				<th scope="row">
 					<label for="mpcx_lightbox_standalone"><?php _e( 'Enable', 'mpcx-lightbox' ); ?>:</label>
 				</th>
 				<td>
 					<input type="checkbox" id="mpcx_lightbox_standalone" name="mpcx_lightbox[standalone]" value="1"<?php checked( $lightbox_options['standalone'], 1 ); ?> />
-                                        <p class="description" id="mpcx_lightbox_standalone-description"><?php printf( __( 'Enable lightbox support for standalone images.', 'mpcx-lightbox' ) ); ?></p>
+					<p class="description" id="mpcx_lightbox_standalone-description"><?php printf( __( 'Enable lightbox support for standalone images.', 'mpcx-lightbox' ) ); ?></p>
 				</td>
 			</tr>
 			<tr>
@@ -75,8 +75,8 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 				</td>
 			</tr>
 		</table>
-                <h2 class="title">Justified Gallery</h2>
-                <table class="form-table">
+		<h2 class="title">Justified Gallery</h2>
+		<table class="form-table">
 			<tr>
 				<th scope="row">
 					<label for="mpcx_lightbox_justified"><?php _e( 'Enable', 'mpcx-lightbox' ); ?>:</label>
@@ -85,15 +85,15 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 					<input type="checkbox" id="mpcx_lightbox_justified" name="mpcx_lightbox[justified]" value="1"<?php checked( $lightbox_options['justified'], 1 ); ?> />
 				</td>
 			</tr>
-                        <tr>
+			<tr>
 				<th scope="row">
 					<label for="mpcx_lightbox_justified_margins"><?php _e( 'Margins', 'mpcx-lightbox' ); ?>:</label>
 				</th>
 				<td>
-                                	<input type="number" min="0" id="mpcx_lightbox_justified_margins" name="mpcx_lightbox[justified_margins]" value="<?php echo $lightbox_options['justified_margins']; ?>" />
+					<input type="number" min="0" id="mpcx_lightbox_justified_margins" name="mpcx_lightbox[justified_margins]" value="<?php echo $lightbox_options['justified_margins']; ?>" />
 				</td>
 			</tr>
-                        <tr>
+			<tr>
 				<th scope="row">
 					<label for="mpcx_lightbox_justified_captions"><?php _e( 'Captions', 'mpcx-lightbox' ); ?>:</label>
 				</th>
@@ -101,7 +101,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 					<input type="checkbox" id="mpcx_lightbox_justified_captions" name="mpcx_lightbox[justified_captions]" value="1"<?php checked( $lightbox_options['justified_captions'], 1 ); ?> />
 				</td>
 			</tr>
-                        <tr>
+			<tr>
 				<th scope="row">
 					<label for="mpcx_lightbox_justified_randomize"><?php _e( 'Randomize', 'mpcx-lightbox' ); ?>:</label>
 				</th>

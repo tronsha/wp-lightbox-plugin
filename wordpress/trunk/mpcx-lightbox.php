@@ -27,7 +27,7 @@ load_plugin_textdomain( 'mpcx-lightbox', false, dirname( plugin_basename( __FILE
 register_activation_hook(
 	__FILE__,
 	function () {
-		add_option( 
+		add_option(
 			'mpcx_lightbox', 
 			array( 
 				'version' => MPCX_LIGHTBOX_VERSION, 
@@ -39,7 +39,7 @@ register_activation_hook(
 				'justified' => '', 
 				'justified_margins' => '3', 
 				'justified_captions' => '1',
-                        	'justified_randomize' => '',
+				'justified_randomize' => '',
 			) 
 		);
 	}
@@ -150,13 +150,13 @@ add_filter(
 add_action(
 	'wp_enqueue_scripts',
 	function () {
-		$jsData            = array();
-		$jsData['ajaxUrl'] = admin_url( 'admin-ajax.php' );
-		$options           = get_option( 'mpcx_lightbox' );
-                if ( 1 === intval( $options['gallery'] ) ) {
+		$jsData				= array();
+		$jsData['ajaxUrl']	= admin_url( 'admin-ajax.php' );
+		$options			= get_option( 'mpcx_lightbox' );
+		if ( 1 === intval( $options['gallery'] ) ) {
 			$jsData['gallery'] = true;
 		}
-                if ( 1 === intval( $options['standalone'] ) ) {
+		if ( 1 === intval( $options['standalone'] ) ) {
 			$jsData['standalone'] = true;
 		}
 		if ( 1 === intval( $options['ajax'] ) ) {
@@ -165,20 +165,20 @@ add_action(
 		if ( 1 === intval( $options['justified'] ) ) {
 			$jsData['justified'] = true;
 			$jsData['justified_margins'] = $options['justified_margins'];
-                        $jsData['justified_captions'] = intval($options['justified_captions']);
-                        $jsData['justified_randomize'] = intval($options['justified_randomize']);
+			$jsData['justified_captions'] = intval($options['justified_captions']);
+			$jsData['justified_randomize'] = intval($options['justified_randomize']);
 		}
 		switch ( $options['lightbox'] ) {
 			case 'fancybox':
-				$fileName           = 'fancybox';
-				$jsData['lightbox'] = 'fancybox';
-				$jsData['title']    = 'caption';
+				$fileName			= 'fancybox';
+				$jsData['lightbox']	= 'fancybox';
+				$jsData['title']	= 'caption';
 				break;
 			case 'lightbox':
 			default:
-				$fileName           = 'lightbox';
-				$jsData['lightbox'] = 'lightbox';
-				$jsData['title']    = 'title';
+				$fileName			= 'lightbox';
+				$jsData['lightbox']	= 'lightbox';
+				$jsData['title']	= 'title';
 				break;
 		}
 		wp_register_style(
