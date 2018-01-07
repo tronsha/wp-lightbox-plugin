@@ -32,7 +32,8 @@ jQuery(document).ready(function () {
                 });
                 console.log(lbData.justified_captions);
                 jQuery(this).justifiedGallery({
-                    margins : parseInt(lbData.justified_margins), 
+                    rowHeight : parseInt(lbData.justified_height),
+                    margins : parseInt(lbData.justified_margins),
                     captions: 1 === parseInt(lbData.justified_captions),
                     randomize: 1 === parseInt(lbData.justified_randomize)
                 });

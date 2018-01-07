@@ -87,10 +87,20 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 			</tr>
 			<tr>
 				<th scope="row">
+					<label for="mpcx_lightbox_justified_height"><?php _e( 'Row Height', 'mpcx-lightbox' ); ?>:</label>
+				</th>
+				<td>
+					<input type="number" min="0" id="mpcx_lightbox_justified_height" name="mpcx_lightbox[justified_height]" value="<?php echo $lightbox_options['justified_height']; ?>" />
+					<p class="description" id="mpcx_lightbox_justified_height-description"><?php printf( __( 'The preferred height of rows in pixel.', 'mpcx-lightbox' ) ); ?></p>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row">
 					<label for="mpcx_lightbox_justified_margins"><?php _e( 'Margins', 'mpcx-lightbox' ); ?>:</label>
 				</th>
 				<td>
 					<input type="number" min="0" id="mpcx_lightbox_justified_margins" name="mpcx_lightbox[justified_margins]" value="<?php echo $lightbox_options['justified_margins']; ?>" />
+					<p class="description" id="mpcx_lightbox_randomize_margins-description"><?php printf( __( 'Decide the margins between the images.', 'mpcx-lightbox' ) ); ?></p>
 				</td>
 			</tr>
 			<tr>
@@ -99,6 +109,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 				</th>
 				<td>
 					<input type="checkbox" id="mpcx_lightbox_justified_captions" name="mpcx_lightbox[justified_captions]" value="1"<?php checked( $lightbox_options['justified_captions'], 1 ); ?> />
+					<p class="description" id="mpcx_lightbox_randomize_captions-description"><?php printf( __( 'Decide if you want to show the caption or not, that appears when your mouse is over the image.', 'mpcx-lightbox' ) ); ?></p>
 				</td>
 			</tr>
 			<tr>
@@ -107,6 +118,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 				</th>
 				<td>
 					<input type="checkbox" id="mpcx_lightbox_justified_randomize" name="mpcx_lightbox[justified_randomize]" value="1"<?php checked( $lightbox_options['justified_randomize'], 1 ); ?> />
+					<p class="description" id="mpcx_lightbox_randomize_height-description"><?php printf( __( 'Automatically randomize or not the order of photos.', 'mpcx-lightbox' ) ); ?></p>
 				</td>
 			</tr>
 		</table>

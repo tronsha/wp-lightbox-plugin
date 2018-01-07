@@ -37,7 +37,8 @@ register_activation_hook(
 				'title' => '', 
 				'ajax' => '', 
 				'justified' => '', 
-				'justified_margins' => '3', 
+				'justified_height' => '120',
+				'justified_margins' => '3',
 				'justified_captions' => '1',
 				'justified_randomize' => '',
 			) 
@@ -164,7 +165,8 @@ add_action(
 		}
 		if ( 1 === intval( $options['justified'] ) ) {
 			$jsData['justified'] = true;
-			$jsData['justified_margins'] = $options['justified_margins'];
+			$jsData['justified_height'] = intval($options['justified_height']) > 0 ? intval($options['justified_height']) : 120 ;
+			$jsData['justified_margins'] = intval($options['justified_margins']);
 			$jsData['justified_captions'] = intval($options['justified_captions']);
 			$jsData['justified_randomize'] = intval($options['justified_randomize']);
 		}
