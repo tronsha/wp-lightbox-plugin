@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lightbox\n"
-"POT-Creation-Date: 2018-01-05 07:16+0100\n"
+"POT-Creation-Date: 2018-01-08 07:04+0100\n"
 "PO-Revision-Date: 2017-04-01 15:31+0100\n"
 "Last-Translator: \n"
 "Language-Team: Stefan Hüsges\n"
@@ -61,17 +61,37 @@ msgid "Enable this for title support."
 msgstr ""
 
 #: admin/options.php:90
+msgid "Row Height"
+msgstr ""
+
+#: admin/options.php:94
+msgid "The preferred height of rows in pixel."
+msgstr ""
+
+#: admin/options.php:99
 msgid "Margins"
 msgstr ""
 
-#: admin/options.php:98
+#: admin/options.php:103
+msgid "Decide the margins between the images."
+msgstr ""
+
+#: admin/options.php:108
 msgid "Captions"
 msgstr ""
 
-#: admin/options.php:106
+#: admin/options.php:112
+msgid "Decide if you want to show the caption or not, that appears when your mouse is over the image."
+msgstr ""
+
+#: admin/options.php:117
 msgid "Randomize"
 msgstr ""
 
-#: mpcx-lightbox.php:96
+#: admin/options.php:121
+msgid "Automatically randomize or not the order of photos."
+msgstr ""
+
+#: mpcx-lightbox.php:97
 msgid "Settings"
 msgstr ""
