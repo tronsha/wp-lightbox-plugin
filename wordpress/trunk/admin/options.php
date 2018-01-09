@@ -67,11 +67,11 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 			</tr>
 			<tr>
 				<th scope="row">
-					<label for="mpcx_lightbox_ajax"><?php _e( 'Ajax', 'mpcx-lightbox' ); ?>:</label>
+					<label for="mpcx_lightbox_ajax"><?php _e( 'Title', 'mpcx-lightbox' ); ?>:</label>
 				</th>
 				<td>
 					<input type="checkbox" id="mpcx_lightbox_ajax" name="mpcx_lightbox[ajax]" value="1"<?php checked( $lightbox_options['ajax'], 1 ); ?> />
-					<p class="description" id="mpcx_lightbox_ajax-description"><?php printf( __( 'Enable this for title support.', 'mpcx-lightbox' ) ); ?></p>
+					<p class="description" id="mpcx_lightbox_ajax-description"><?php printf( __( 'Activates ajax for title support of standalone images.', 'mpcx-lightbox' ) ); ?></p>
 				</td>
 			</tr>
 		</table>

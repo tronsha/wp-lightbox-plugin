@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lightbox\n"
-"POT-Creation-Date: 2018-01-08 06:50+0100\n"
-"PO-Revision-Date: 2018-01-08 06:58+0100\n"
+"POT-Creation-Date: 2018-01-09 07:16+0100\n"
+"PO-Revision-Date: 2018-01-09 07:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: Stefan Hüsges\n"
 "Language: de_DE\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: public\n"
 
-#: admin/options.php:33 admin/options.php:38
+#: admin/options.php:33 admin/options.php:38 admin/options.php:70
 msgid "Title"
 msgstr "Titel"
 
@@ -52,13 +52,9 @@ msgstr "Einzelbilder"
 msgid "Enable lightbox support for standalone images."
 msgstr "Aktiviert die Lightbox-Unterstützung für die Einzelbilder."
 
-#: admin/options.php:70
-msgid "Ajax"
-msgstr "Ajax"
-
 #: admin/options.php:74
-msgid "Enable this for title support."
-msgstr "Aktivieren Sie dies für die Titelunterstützung."
+msgid "Activates ajax for title support of standalone images."
+msgstr "Aktiviert Ajax für die Titelunterstützung von Einzelbildern."
 
 #: admin/options.php:90
 msgid "Row Height"
@@ -97,6 +93,19 @@ msgstr "Ordnet die Reihenfolge der Bilder automatisch  zufällig an."
 #: mpcx-lightbox.php:97
 msgid "Settings"
 msgstr "Einstellungen"
+
+#~ msgid "Activates ajax for title support of non gallery images."
+#~ msgstr ""
+#~ "Aktiviert Ajax für die Titelunterstützung von Nicht-Galerie-Bildern."
+
+#~ msgid "Enable ajax for standalone image title support."
+#~ msgstr "Aktiviert Ajax für die Titelunterstützung von Einzelbildern."
+
+#~ msgid "Ajax"
+#~ msgstr "Ajax"
+
+#~ msgid "Enable this for title support."
+#~ msgstr "Aktivieren Sie dies für die Titelunterstützung."
 
 #~ msgid "Enable lightbox support for Gallery."
 #~ msgstr "Aktivieren Sie die Lightbox-Unterstützung für die Galerie."

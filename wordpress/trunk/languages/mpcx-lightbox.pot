@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lightbox\n"
-"POT-Creation-Date: 2018-01-08 07:04+0100\n"
+"POT-Creation-Date: 2018-01-09 07:16+0100\n"
 "PO-Revision-Date: 2017-04-01 15:31+0100\n"
 "Last-Translator: \n"
 "Language-Team: Stefan Hüsges\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: public\n"
 
-#: admin/options.php:33 admin/options.php:38
+#: admin/options.php:33 admin/options.php:38 admin/options.php:70
 msgid "Title"
 msgstr ""
 
@@ -52,12 +52,8 @@ msgstr ""
 msgid "Enable lightbox support for standalone images."
 msgstr ""
 
-#: admin/options.php:70
-msgid "Ajax"
-msgstr ""
-
 #: admin/options.php:74
-msgid "Enable this for title support."
+msgid "Activates ajax for title support of standalone images."
 msgstr ""
 
 #: admin/options.php:90
