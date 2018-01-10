@@ -53,7 +53,7 @@ if ( true === is_admin() ) {
 		function ( $object, $options ) {
 			if ( 'update' === $options['action'] && 'plugin' === $options['type'] ) {
 				if ( true === in_array( plugin_basename( __FILE__ ), $options['plugins'] ) ) {
-					include plugin_dir_path( __FILE__ ) . 'update.php';
+					include_once plugin_dir_path( __FILE__ ) . 'update.php';
 				}
 			}
 		},
@@ -104,6 +104,11 @@ if ( true === is_admin() ) {
 		5
 	);
 
+	$data = get_option( 'mpcx_lightbox' );
+	if ( true === isset( $data['version'] ) && true === version_compare( $data['version'], MPCX_LIGHTBOX_VERSION, '<' ) ) {
+            include_once plugin_dir_path( __FILE__ ) . 'update.php';
+	}
+
 }
 
 add_filter(
@@ -151,9 +156,9 @@ add_filter(
 add_action(
 	'wp_enqueue_scripts',
 	function () {
-		$jsData				= array();
-		$jsData['ajaxUrl']	= admin_url( 'admin-ajax.php' );
-		$options			= get_option( 'mpcx_lightbox' );
+		$jsData            = array();
+		$jsData['ajaxUrl'] = admin_url( 'admin-ajax.php' );
+		$options           = get_option( 'mpcx_lightbox' );
 		if ( 1 === intval( $options['gallery'] ) ) {
 			$jsData['gallery'] = true;
 		}
@@ -172,15 +177,15 @@ add_action(
 		}
 		switch ( $options['lightbox'] ) {
 			case 'fancybox':
-				$fileName			= 'fancybox';
-				$jsData['lightbox']	= 'fancybox';
-				$jsData['title']	= 'caption';
+				$fileName           = 'fancybox';
+				$jsData['lightbox'] = 'fancybox';
+				$jsData['title']    = 'caption';
 				break;
 			case 'lightbox':
 			default:
-				$fileName			= 'lightbox';
-				$jsData['lightbox']	= 'lightbox';
-				$jsData['title']	= 'title';
+				$fileName           = 'lightbox';
+				$jsData['lightbox'] = 'lightbox';
+				$jsData['title']    = 'title';
 				break;
 		}
 		wp_register_style(
