@@ -11,6 +11,9 @@ if ( true === isset( $data['version'] ) && true === version_compare( $data['vers
 	if ( true === version_compare( $data['version'], '1.2.4', '<' ) ) {
 		$data['gallery'] = '1';
 		$data['standalone'] = '1';
+		$data['justified_height'] = '120';
+		$data['justified_margins'] = '3';
+		$data['justified_captions'] = '1';
 	}
 
 }
