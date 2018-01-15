@@ -31,8 +31,8 @@ register_activation_hook(
 			'mpcx_lightbox', 
 			array( 
 				'version' => MPCX_LIGHTBOX_VERSION, 
-				'gallery' => '1', 
-				'standalone' => '1', 
+				'gallery' => '', 
+				'standalone' => '', 
 				'lightbox' => 'lightbox', 
 				'title' => '', 
 				'ajax' => '', 
@@ -159,10 +159,10 @@ add_action(
 		$jsData            = array();
 		$jsData['ajaxUrl'] = admin_url( 'admin-ajax.php' );
 		$options           = get_option( 'mpcx_lightbox' );
-		if ( 1 === intval( $options['gallery'] ) ) {
+		if ( 1 !== intval( $options['gallery'] ) ) {
 			$jsData['gallery'] = true;
 		}
-		if ( 1 === intval( $options['standalone'] ) ) {
+		if ( 1 !== intval( $options['standalone'] ) ) {
 			$jsData['standalone'] = true;
 		}
 		if ( 1 === intval( $options['ajax'] ) ) {

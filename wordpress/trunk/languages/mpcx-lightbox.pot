@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lightbox\n"
-"POT-Creation-Date: 2018-01-09 07:16+0100\n"
+"POT-Creation-Date: 2018-01-15 07:08+0100\n"
 "PO-Revision-Date: 2017-04-01 15:31+0100\n"
 "Last-Translator: \n"
 "Language-Team: Stefan Hüsges\n"
@@ -36,12 +36,12 @@ msgstr ""
 msgid "Gallery"
 msgstr ""
 
-#: admin/options.php:49 admin/options.php:61 admin/options.php:82
-msgid "Enable"
+#: admin/options.php:49 admin/options.php:61
+msgid "Disable"
 msgstr ""
 
 #: admin/options.php:53
-msgid "Enable lightbox support for gallery."
+msgid "Disabled lightbox support for gallery."
 msgstr ""
 
 #: admin/options.php:57
@@ -49,11 +49,15 @@ msgid "Standalone Images"
 msgstr ""
 
 #: admin/options.php:65
-msgid "Enable lightbox support for standalone images."
+msgid "Disabled lightbox support for standalone images."
 msgstr ""
 
 #: admin/options.php:74
 msgid "Activates ajax for title support of standalone images."
+msgstr ""
+
+#: admin/options.php:82
+msgid "Enable"
 msgstr ""
 
 #: admin/options.php:90

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lightbox\n"
-"POT-Creation-Date: 2018-01-09 07:16+0100\n"
-"PO-Revision-Date: 2018-01-09 07:16+0100\n"
+"POT-Creation-Date: 2018-01-15 07:08+0100\n"
+"PO-Revision-Date: 2018-01-15 07:15+0100\n"
 "Last-Translator: \n"
 "Language-Team: Stefan Hüsges\n"
 "Language: de_DE\n"
@@ -36,25 +36,29 @@ msgstr "Beschriftung"
 msgid "Gallery"
 msgstr "Galerie"
 
-#: admin/options.php:49 admin/options.php:61 admin/options.php:82
-msgid "Enable"
-msgstr "Aktivieren"
+#: admin/options.php:49 admin/options.php:61
+msgid "Disable"
+msgstr "Deaktivieren"
 
 #: admin/options.php:53
-msgid "Enable lightbox support for gallery."
-msgstr "Aktiviert die Lightbox-Unterstützung für die Galerie."
+msgid "Disabled lightbox support for gallery."
+msgstr "Deaktiviert die Lightbox-Unterstützung für die Galerie."
 
 #: admin/options.php:57
 msgid "Standalone Images"
 msgstr "Einzelbilder"
 
 #: admin/options.php:65
-msgid "Enable lightbox support for standalone images."
-msgstr "Aktiviert die Lightbox-Unterstützung für die Einzelbilder."
+msgid "Disabled lightbox support for standalone images."
+msgstr "Deaktiviert die Lightbox-Unterstützung für Einzelbilder."
 
 #: admin/options.php:74
 msgid "Activates ajax for title support of standalone images."
 msgstr "Aktiviert Ajax für die Titelunterstützung von Einzelbildern."
+
+#: admin/options.php:82
+msgid "Enable"
+msgstr "Aktivieren"
 
 #: admin/options.php:90
 msgid "Row Height"
@@ -93,6 +97,12 @@ msgstr "Ordnet die Reihenfolge der Bilder automatisch  zufällig an."
 #: mpcx-lightbox.php:97
 msgid "Settings"
 msgstr "Einstellungen"
+
+#~ msgid "Enable lightbox support for gallery."
+#~ msgstr "Aktiviert die Lightbox-Unterstützung für die Galerie."
+
+#~ msgid "Enable lightbox support for standalone images."
+#~ msgstr "Aktiviert die Lightbox-Unterstützung für die Einzelbilder."
 
 #~ msgid "Activates ajax for title support of non gallery images."
 #~ msgstr ""
