@@ -1,6 +1,6 @@
 /*!
  * WordPress Lightbox Plugin
- * Copyright 2015 - 2017 Stefan Hüsges
+ * Copyright 2015 - 2018 Stefan Hüsges
  * MIT License
  * https://github.com/tronsha/wp-lightbox-plugin
  */
@@ -14,30 +14,6 @@ jQuery(document).ready(function () {
                     jQuery(this).attr('data-' + lbData.lightbox, id);
                 }
             });
-            if (1 === parseInt(lbData.justified)) {
-                $div.children('.gallery-item').each(function() {
-                    var $item = jQuery(this);
-                    var $caption = $item.children('.gallery-caption');
-                    var caption = $caption.text();
-                    $caption.remove();
-                    if (caption.length > 0) {
-                        $item.find('.gallery-icon a').append('<div class="caption">' + caption + '</div>');
-                    }
-                });
-                $div.find('.gallery-icon a').each(function () {
-                    var $a = jQuery(this);
-                    while ($a.parent().attr('id') !== $div.attr('id')) {
-                        $a.unwrap();
-                    }
-                });
-                console.log(lbData.justified_captions);
-                jQuery(this).justifiedGallery({
-                    rowHeight : parseInt(lbData.justified_height),
-                    margins : parseInt(lbData.justified_margins),
-                    captions: 1 === parseInt(lbData.justified_captions),
-                    randomize: 1 === parseInt(lbData.justified_randomize)
-                });
-            }
         });
     }
     if (1 === parseInt(lbData.standalone)) {
@@ -97,6 +73,33 @@ jQuery(document).ready(function () {
                     $a.removeAttr('data-' + lbData.title);
                 }
             }
+        });
+    }
+    if (1 === parseInt(lbData.justified)) {
+        jQuery('.gallery').each(function () {
+            var $div = jQuery(this);
+            $div.children('.gallery-item').each(function() {
+                var $item = jQuery(this);
+                var $caption = $item.children('.gallery-caption');
+                var caption = $caption.text();
+                $caption.remove();
+                if (caption.length > 0) {
+                    $item.find('.gallery-icon a').append('<div class="caption">' + caption + '</div>');
+                }
+            });
+            $div.find('.gallery-icon a').each(function () {
+                var $a = jQuery(this);
+                while ($a.parent().attr('id') !== $div.attr('id')) {
+                    $a.unwrap();
+                }
+            });
+            console.log(lbData.justified_captions);
+            jQuery(this).justifiedGallery({
+                rowHeight : parseInt(lbData.justified_height),
+                margins : parseInt(lbData.justified_margins),
+                captions: 1 === parseInt(lbData.justified_captions),
+                randomize: 1 === parseInt(lbData.justified_randomize)
+            });
         });
     }
 });
