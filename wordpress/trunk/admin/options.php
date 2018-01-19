@@ -125,3 +125,52 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 		<?php submit_button(); ?>
 	</form>
 </div>
+<style>
+
+    table.disabled tr {
+        display: none;
+    }
+
+    table.disabled tr:first-child {
+        display: block;
+    }
+
+</style>
+<script type="text/javascript">
+
+    var $standalone = jQuery('#mpcx_lightbox_standalone');
+    var $standaloneTable = $standalone.parents('table');
+
+    function toggleStandalone() {
+        if (true === $standalone.is(':checked')) {
+            $standaloneTable.addClass('disabled');
+        } else {
+            $standaloneTable.removeClass('disabled');
+        }
+    }
+
+    $standalone.click(function() {
+        toggleStandalone();
+    });
+
+    var $justified = jQuery('#mpcx_lightbox_justified');
+    var $justifiedTable = $justified.parents('table');
+
+    function toggleJustified() {
+        if (true === $justified.is(':checked')) {
+            $justifiedTable.removeClass('disabled');
+        } else {
+            $justifiedTable.addClass('disabled');
+        }
+    }
+
+    $justified.click(function() {
+        toggleJustified();
+    });
+
+    jQuery(document).ready(function() {
+        toggleStandalone();
+        toggleJustified();
+    });
+
+</script>
