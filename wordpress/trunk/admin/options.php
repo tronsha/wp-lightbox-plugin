@@ -149,7 +149,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
         }
     }
 
-    $standalone.click(function() {
+    $standalone.on('click', function() {
         toggleStandalone();
     });
 
@@ -164,7 +164,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
         }
     }
 
-    $justified.click(function() {
+    $justified.on('click', function() {
         toggleJustified();
     });
 
