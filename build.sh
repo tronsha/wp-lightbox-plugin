@@ -6,11 +6,8 @@ if [ $NODE_EXISTS = 1 ]; then
     rm ./wordpress/trunk/public/css/*.*
     rm ./wordpress/trunk/public/js/*.*
     rm ./wordpress/trunk/public/images/*.*
-    rm ./wordpress/trunk/public/css/colorbox/1/images/*.*
-    rm ./wordpress/trunk/public/css/colorbox/2/images/*.*
-    rm ./wordpress/trunk/public/css/colorbox/3/images/*.*
-    rm ./wordpress/trunk/public/css/colorbox/4/images/*.*
-    rm ./wordpress/trunk/public/css/colorbox/5/images/*.*
+    rm ./wordpress/trunk/public/css/colorbox/*/*.*
+    rm ./wordpress/trunk/public/css/colorbox/*/images/*.*
     echo '... ready!'
     echo 'Creating minified JavaScript ...'
     ./vendor/uglifyjs -m --comments /^!/ ./src/js/images.js -o ./wordpress/trunk/public/js/images.min.js
