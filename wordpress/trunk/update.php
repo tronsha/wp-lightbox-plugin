@@ -4,7 +4,7 @@
  * @package wp-lightbox-plugin
  */
 
-define( 'MPCX_LIGHTBOX_UPDATE_VERSION', '1.2.4' );
+define( 'MPCX_LIGHTBOX_UPDATE_VERSION', '1.2.5' );
 $data = get_option( 'mpcx_lightbox' );
 if ( true === isset( $data['version'] ) && true === version_compare( $data['version'], MPCX_LIGHTBOX_UPDATE_VERSION, '<' ) ) {
 

@@ -3,7 +3,7 @@ Contributors: DeusTron
 Tags: lightbox, fancybox, justified gallery, gallery
 Requires at least: 3.3
 Tested up to: 4.9
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 License: MIT
 License URI: https://raw.githubusercontent.com/tronsha/wp-lightbox-plugin/master/LICENSE
 

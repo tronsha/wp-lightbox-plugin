@@ -25,6 +25,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 					<select id="mpcx_lightbox_lightbox" name="mpcx_lightbox[lightbox]">
 						<option value="lightbox" <?php selected( $lightbox_options['lightbox'], 'lightbox' ); ?>>Lightbox2</option>
 						<option value="fancybox" <?php selected( $lightbox_options['lightbox'], 'fancybox' ); ?>>fancyBox3</option>
+                                                <option value="colorbox" <?php selected( $lightbox_options['lightbox'], 'colorbox' ); ?>>Colorbox</option>
 					</select>
 				</td>
 			</tr>
