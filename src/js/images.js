@@ -11,9 +11,10 @@ jQuery(document).ready(function () {
             var id = $div.attr('id');
             $div.find('.gallery-icon a').each(function () {
                 if (-1 === jQuery(this).attr('href').indexOf('attachment_id')) {
-                    jQuery(this).attr('data-' + lbData.lightbox, id);
+                    jQuery(this).attr(lbData.lightbox, id);
                 }
             });
+            jQuery("<script>jQuery('#" + id + " .gallery-icon a').colorbox({rel:'" + id + "', maxWidth: '80%', maxHeight:'80%'});</script>").appendTo(document.body);
         });
     }
     if (1 === parseInt(lbData.standalone)) {
@@ -27,17 +28,18 @@ jQuery(document).ready(function () {
                 }
                 var $a = $img.parent('a');
                 if (undefined !== $a.attr('data-lightbox') && 'lightbox' !== lbData.lightbox) {
-                    $a.attr('data-' + lbData.lightbox, $a.attr('data-lightbox'));
+                    $a.attr(lbData.lightbox, $a.attr('data-lightbox'));
                     $a.removeAttr('data-lightbox');
                 }
                 if (undefined !== $a.attr('data-title') && 'title' !== lbData.title) {
-                    $a.attr('data-' + lbData.title, $a.attr('data-title'));
+                    $a.attr(lbData.title, $a.attr('data-title'));
                     $a.removeAttr('data-title');
                 }
                 var href = $a.attr('href');
                 if (undefined !== href && null !== href.match(/\.(jpeg|jpg|gif|png)$/)) {
-                    if (undefined === $a.attr('data-' + lbData.lightbox) || '' === $a.attr('data-' + lbData.lightbox)) {
-                        $a.attr('data-' + lbData.lightbox, id);
+                    if (undefined === $a.attr(lbData.lightbox) || '' === $a.attr(lbData.lightbox)) {
+                        $a.attr(lbData.lightbox, id);
+                        jQuery("<script>jQuery('a[rel=" + id + "]').colorbox({rel:'" + id + "', maxWidth: '80%', maxHeight:'80%'});</script>").appendTo(document.body);
                     } 
                     if (1 === parseInt(lbData.ajax)) {
                         var classArray = [];
@@ -59,7 +61,7 @@ jQuery(document).ready(function () {
                                     },
                                     success: function (result) {
                                         if ('' !== result) {
-                                            $a.attr('data-' + lbData.title, result);
+                                            $a.attr(lbData.title, result);
                                         }
                                     },
                                     error: function () {
@@ -69,8 +71,8 @@ jQuery(document).ready(function () {
                         }
                     }
                 } else {
-                    $a.removeAttr('data-' + lbData.lightbox);
-                    $a.removeAttr('data-' + lbData.title);
+                    $a.removeAttr(lbData.lightbox);
+                    $a.removeAttr(lbData.title);
                 }
             }
         });
@@ -93,7 +95,6 @@ jQuery(document).ready(function () {
                     $a.unwrap();
                 }
             });
-            console.log(lbData.justified_captions);
             jQuery(this).justifiedGallery({
                 rowHeight : parseInt(lbData.justified_height),
                 margins : parseInt(lbData.justified_margins),

@@ -177,31 +177,34 @@ add_action(
 		}
 		switch ( $options['lightbox'] ) {
                     	case 'colorbox':
-				$fileName           = 'colorbox';
-				$jsData['lightbox'] = 'colorbox';
+				$jsFileName         = 'colorbox';
+				$cssFileName        = 'colorbox/1/colorbox';
+				$jsData['lightbox'] = 'rel';
 				$jsData['title']    = 'title';
 				break;
 			case 'fancybox':
-				$fileName           = 'fancybox';
-				$jsData['lightbox'] = 'fancybox';
-				$jsData['title']    = 'caption';
+				$jsFileName         = 'fancybox';
+				$cssFileName        = 'fancybox';
+				$jsData['lightbox'] = 'data-fancybox';
+				$jsData['title']    = 'data-caption';
 				break;
 			case 'lightbox':
 			default:
-				$fileName           = 'lightbox';
-				$jsData['lightbox'] = 'lightbox';
-				$jsData['title']    = 'title';
+				$jsFileName         = 'lightbox';
+				$cssFileName        = 'lightbox';
+				$jsData['lightbox'] = 'data-lightbox';
+				$jsData['title']    = 'data-title';
 				break;
 		}
 		wp_register_style(
 			'mpcx-lightbox',
-			plugin_dir_url( __FILE__ ) . 'public/css/' . $fileName . '.min.css',
+			plugin_dir_url( __FILE__ ) . 'public/css/' . $cssFileName . '.min.css',
 			array(),
 			MPCX_LIGHTBOX_VERSION
 		);
 		wp_register_script(
 			'mpcx-lightbox',
-			plugin_dir_url( __FILE__ ) . 'public/js/' . $fileName . '.min.js',
+			plugin_dir_url( __FILE__ ) . 'public/js/' . $jsFileName . '.min.js',
 			array( 'jquery' ),
 			MPCX_LIGHTBOX_VERSION,
 			true
