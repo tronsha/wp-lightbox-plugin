@@ -20,19 +20,19 @@ if [ $NODE_EXISTS = 1 ]; then
     ./vendor/csso ./vendor/lightbox/dist/css/lightbox.css -o ./wordpress/trunk/public/css/lightbox.min.css
     ./vendor/csso ./vendor/fancybox/dist/jquery.fancybox.css -o ./wordpress/trunk/public/css/fancybox.min.css
     ./vendor/csso ./vendor/justifiedgallery/dist/css/justifiedGallery.css -o ./wordpress/trunk/public/css/justifiedgallery.min.css
-    ./vendor/csso ./vendor/colorbox/example1/colorbox.css -o ./wordpress/trunk/public/css/colorbox/1/colorbox.min.css
-    ./vendor/csso ./vendor/colorbox/example2/colorbox.css -o ./wordpress/trunk/public/css/colorbox/2/colorbox.min.css
-    ./vendor/csso ./vendor/colorbox/example3/colorbox.css -o ./wordpress/trunk/public/css/colorbox/3/colorbox.min.css
-    ./vendor/csso ./vendor/colorbox/example4/colorbox.css -o ./wordpress/trunk/public/css/colorbox/4/colorbox.min.css
-    ./vendor/csso ./vendor/colorbox/example5/colorbox.css -o ./wordpress/trunk/public/css/colorbox/5/colorbox.min.css
+    ./vendor/csso ./vendor/colorbox/example1/colorbox.css -o ./wordpress/trunk/public/css/colorbox/0/colorbox.min.css
+    ./vendor/csso ./vendor/colorbox/example2/colorbox.css -o ./wordpress/trunk/public/css/colorbox/1/colorbox.min.css
+    ./vendor/csso ./vendor/colorbox/example3/colorbox.css -o ./wordpress/trunk/public/css/colorbox/2/colorbox.min.css
+    ./vendor/csso ./vendor/colorbox/example4/colorbox.css -o ./wordpress/trunk/public/css/colorbox/3/colorbox.min.css
+    ./vendor/csso ./vendor/colorbox/example5/colorbox.css -o ./wordpress/trunk/public/css/colorbox/4/colorbox.min.css
     echo '... ready!'
     echo 'Copy images ...'
     cp ./vendor/lightbox/dist/images/* ./wordpress/trunk/public/images/
-    cp ./vendor/colorbox/example1/images/* ./wordpress/trunk/public/css/colorbox/1/images/
-    cp ./vendor/colorbox/example2/images/* ./wordpress/trunk/public/css/colorbox/2/images/
-    cp ./vendor/colorbox/example3/images/* ./wordpress/trunk/public/css/colorbox/3/images/
-    cp ./vendor/colorbox/example4/images/* ./wordpress/trunk/public/css/colorbox/4/images/
-    cp ./vendor/colorbox/example5/images/* ./wordpress/trunk/public/css/colorbox/5/images/
+    cp ./vendor/colorbox/example1/images/* ./wordpress/trunk/public/css/colorbox/0/images/
+    cp ./vendor/colorbox/example2/images/* ./wordpress/trunk/public/css/colorbox/1/images/
+    cp ./vendor/colorbox/example3/images/* ./wordpress/trunk/public/css/colorbox/2/images/
+    cp ./vendor/colorbox/example4/images/* ./wordpress/trunk/public/css/colorbox/3/images/
+    cp ./vendor/colorbox/example5/images/* ./wordpress/trunk/public/css/colorbox/4/images/
     echo '... ready!'
     echo 'Build complete!'
 else

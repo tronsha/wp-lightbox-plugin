@@ -76,6 +76,23 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 				</td>
 			</tr>
 		</table>
+                <h2 class="title colorbox">Colorbox</h2>
+		<table class="form-table colorbox">
+			<tr>
+				<th scope="row">
+					<label for="mpcx_lightbox_colorbox_layout"><?php _e( 'Layout', 'mpcx-lightbox' ); ?>:</label>
+				</th>
+				<td>
+					<select id="mpcx_lightbox_colorbox_layout" name="mpcx_lightbox[colorbox_layout]">
+						<option value="0" <?php selected( $lightbox_options['colorbox_layout'], 0 ); ?>>1</option>
+						<option value="1" <?php selected( $lightbox_options['colorbox_layout'], 1 ); ?>>2</option>
+						<option value="2" <?php selected( $lightbox_options['colorbox_layout'], 2 ); ?>>3</option>
+						<option value="3" <?php selected( $lightbox_options['colorbox_layout'], 3 ); ?>>4</option>
+						<option value="4" <?php selected( $lightbox_options['colorbox_layout'], 4 ); ?>>5</option>
+					</select>
+				</td>
+			</tr>
+		</table>
 		<h2 class="title">Justified Gallery</h2>
 		<table class="form-table">
 			<tr>
@@ -169,9 +186,24 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
         toggleJustified();
     });
 
+    var $lightbox = jQuery('#mpcx_lightbox_lightbox');
+
+    function toggleColorbox() {
+        if ('colorbox' === $lightbox.find('option:selected').val()) {
+            jQuery('.colorbox').css('display', '');
+        } else {
+            jQuery('.colorbox').css('display', 'none');
+        }
+    }
+    
+    $lightbox.on('change', function() {
+        toggleColorbox();
+    });
+    
     jQuery(document).ready(function() {
         toggleStandalone();
         toggleJustified();
+        toggleColorbox();
     });
 
 </script>

@@ -14,7 +14,7 @@ jQuery(document).ready(function () {
                     jQuery(this).attr(lbData.lightbox, id);
                 }
             });
-            jQuery("<script>jQuery('#" + id + " .gallery-icon a').colorbox({rel:'" + id + "', maxWidth: '80%', maxHeight:'80%'});</script>").appendTo(document.body);
+            jQuery("<script>jQuery('#" + id + " .gallery-icon a').colorbox({rel:'" + id + "', maxWidth: '100%', maxHeight:'100%'});</script>").appendTo(document.body);
         });
     }
     if (1 === parseInt(lbData.standalone)) {
@@ -39,7 +39,7 @@ jQuery(document).ready(function () {
                 if (undefined !== href && null !== href.match(/\.(jpeg|jpg|gif|png)$/)) {
                     if (undefined === $a.attr(lbData.lightbox) || '' === $a.attr(lbData.lightbox)) {
                         $a.attr(lbData.lightbox, id);
-                        jQuery("<script>jQuery('a[rel=" + id + "]').colorbox({rel:'" + id + "', maxWidth: '80%', maxHeight:'80%'});</script>").appendTo(document.body);
+                        jQuery("<script>jQuery('a[rel=" + id + "]').colorbox({rel:'" + id + "', maxWidth: '100%', maxHeight:'100%'});</script>").appendTo(document.body);
                     } 
                     if (1 === parseInt(lbData.ajax)) {
                         var classArray = [];
