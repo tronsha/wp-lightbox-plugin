@@ -1,6 +1,6 @@
 === Lightbox ===
 Contributors: DeusTron
-Tags: lightbox, fancybox, justified gallery, gallery
+Tags: lightbox, fancybox, colorbox, justified gallery, gallery
 Requires at least: 3.3
 Tested up to: 4.9
 Stable tag: 1.2.5

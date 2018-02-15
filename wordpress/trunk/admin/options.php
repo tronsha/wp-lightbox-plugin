@@ -76,8 +76,8 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 				</td>
 			</tr>
 		</table>
-                <h2 class="title colorbox">Colorbox</h2>
-		<table class="form-table colorbox">
+                <h2 class="title">Colorbox</h2>
+		<table class="form-table" id="mpcx_lightbox_colorbox">
 			<tr>
 				<th scope="row">
 					<label for="mpcx_lightbox_colorbox_layout"><?php _e( 'Layout', 'mpcx-lightbox' ); ?>:</label>
@@ -187,12 +187,16 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
     });
 
     var $lightbox = jQuery('#mpcx_lightbox_lightbox');
+    var $colorboxTable = jQuery('#mpcx_lightbox_colorbox');
+    var $colorboxH2 = $colorboxTable.prev();
 
     function toggleColorbox() {
         if ('colorbox' === $lightbox.find('option:selected').val()) {
-            jQuery('.colorbox').css('display', '');
+            $colorboxTable.css('display', '');
+            $colorboxH2.css('display', '');
         } else {
-            jQuery('.colorbox').css('display', 'none');
+            $colorboxTable.css('display', 'none');
+            $colorboxH2.css('display', 'none');
         }
     }
     

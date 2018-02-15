@@ -14,7 +14,9 @@ jQuery(document).ready(function () {
                     jQuery(this).attr(lbData.lightbox, id);
                 }
             });
-            jQuery("<script>jQuery('#" + id + " .gallery-icon a').colorbox({rel:'" + id + "', maxWidth: '100%', maxHeight:'100%'});</script>").appendTo(document.body);
+            if ('colorbox' === lbData.name) {
+                jQuery("<script>jQuery('#" + id + " .gallery-icon a').colorbox({rel:'" + id + "', maxWidth: '95%', maxHeight: '95%'});</script>").appendTo(document.body);
+            }
         });
     }
     if (1 === parseInt(lbData.standalone)) {
@@ -27,11 +29,11 @@ jQuery(document).ready(function () {
                     id = src.split(/[^a-zA-Z0-9]+/).join('-') + '-' + id;
                 }
                 var $a = $img.parent('a');
-                if (undefined !== $a.attr('data-lightbox') && 'lightbox' !== lbData.lightbox) {
+                if (undefined !== $a.attr('data-lightbox') && 'data-lightbox' !== lbData.lightbox) {
                     $a.attr(lbData.lightbox, $a.attr('data-lightbox'));
                     $a.removeAttr('data-lightbox');
                 }
-                if (undefined !== $a.attr('data-title') && 'title' !== lbData.title) {
+                if (undefined !== $a.attr('data-title') && 'data-title' !== lbData.title) {
                     $a.attr(lbData.title, $a.attr('data-title'));
                     $a.removeAttr('data-title');
                 }
@@ -39,7 +41,9 @@ jQuery(document).ready(function () {
                 if (undefined !== href && null !== href.match(/\.(jpeg|jpg|gif|png)$/)) {
                     if (undefined === $a.attr(lbData.lightbox) || '' === $a.attr(lbData.lightbox)) {
                         $a.attr(lbData.lightbox, id);
-                        jQuery("<script>jQuery('a[rel=" + id + "]').colorbox({rel:'" + id + "', maxWidth: '100%', maxHeight:'100%'});</script>").appendTo(document.body);
+                        if ('colorbox' === lbData.name) {
+                            jQuery("<script>jQuery('a[rel=" + id + "]').colorbox({rel:'" + id + "', maxWidth: '95%', maxHeight: '95%'});</script>").appendTo(document.body);
+                        }
                     } 
                     if (1 === parseInt(lbData.ajax)) {
                         var classArray = [];

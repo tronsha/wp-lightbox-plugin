@@ -134,6 +134,9 @@ add_filter(
 		$parts = explode( '>', $markup, 2 );
 		if ( false === empty( $title ) && false === empty( $parts[0] ) && false === empty( $parts[1] ) ) {
 			switch ( $options['lightbox'] ) {
+                            	case 'colorbox':
+					$attributeName = 'title';
+					break;
 				case 'fancybox':
 					$attributeName = 'data-caption';
 					break;
@@ -179,12 +182,14 @@ add_action(
                     	case 'colorbox':
 				$jsFileName         = 'colorbox';
 				$cssFileName        = 'colorbox/' . intval($options['colorbox_layout']) . '/colorbox';
+				$jsData['name']     = 'colorbox';
 				$jsData['lightbox'] = 'rel';
 				$jsData['title']    = 'title';
 				break;
 			case 'fancybox':
 				$jsFileName         = 'fancybox';
 				$cssFileName        = 'fancybox';
+				$jsData['name']     = 'fancybox';
 				$jsData['lightbox'] = 'data-fancybox';
 				$jsData['title']    = 'data-caption';
 				break;
@@ -192,6 +197,7 @@ add_action(
 			default:
 				$jsFileName         = 'lightbox';
 				$cssFileName        = 'lightbox';
+				$jsData['name']     = 'lightbox';
 				$jsData['lightbox'] = 'data-lightbox';
 				$jsData['title']    = 'data-title';
 				break;
@@ -221,7 +227,10 @@ add_action(
 		wp_enqueue_script( 'mpcx-images2lightbox' );
 		wp_localize_script( 'mpcx-images2lightbox', 'lbData', $jsData );
 		if ( true === is_admin_bar_showing() ) {
-			wp_add_inline_style( 'admin-bar', '#wpadminbar {z-index: 9990;}' );
+			wp_add_inline_style( 'admin-bar', '#wpadminbar {z-index: 99990;}' );
+		}
+                if ('colorbox' === $options['lightbox']) {
+			wp_add_inline_style( 'mpcx-lightbox', '#cboxOverlay, #cboxWrapper, #colorbox {z-index: 99999;} #colorbox {font: 12px/1.2 Verdana, sans-serif;} #colorbox button {font: 400 13.3333px Arial; text-transform: none;}' );
 		}
 		if ( 1 === intval( $options['justified'] ) ) {
 			wp_register_style(
