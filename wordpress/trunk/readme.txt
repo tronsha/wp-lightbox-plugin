@@ -21,7 +21,7 @@ If the plugin is active, the images are now open in the lightbox.
 
 The plugin requires PHP 5.3.2 or newer.
 
-This plugin uses [Lightbox2](https://github.com/lokesh/lightbox2) from Lokesh Dhakar, [fancyBox3](https://github.com/fancyapps/fancybox) from Jānis Skarnelis and [Justified Gallery](https://github.com/miromannino/Justified-Gallery) from Miro Mannino.
+This plugin uses [Lightbox2](https://github.com/lokesh/lightbox2) from Lokesh Dhakar, [fancyBox3](https://github.com/fancyapps/fancybox) from Jānis Skarnelis, [Colorbox](https://github.com/jackmoore/colorbox) from Jack Moore and [Justified Gallery](https://github.com/miromannino/Justified-Gallery) from Miro Mannino.
 
 == Installation ==
 
@@ -35,10 +35,10 @@ This plugin uses [Lightbox2](https://github.com/lokesh/lightbox2) from Lokesh Dh
 == Changelog ==
 
 = 1.2.5 =
-* Added: Colorbox v1.6.4
+* Add: Colorbox v1.6.4
 
 = 1.2.4 =
-* Added: Justified Gallery v3.6.3
+* Add: Justified Gallery v3.6.3
 * Update: fancyBox v3.2.5
 
 = 1.2.3 =
@@ -47,16 +47,16 @@ This plugin uses [Lightbox2](https://github.com/lokesh/lightbox2) from Lokesh Dh
 * Fix for javascript error if tag attribute not exists
 
 = 1.2.2 =
-* Added support for media title for standalone images
+* Add support for media title for standalone images
 
 = 1.2.1 =
-* Added support for standalone images
+* Add support for standalone images
 
 = 1.2.0 =
-* Added: fancyBox v3.0.47
+* Add: fancyBox v3.0.47
 
 = 1.1.8 =
-* Added support for media title
+* Add support for media title
 
 = 1.1.7 =
 * Update: Lightbox v2.9.0
