@@ -9,6 +9,7 @@
 | admin_url | 2.6.0 |
 | checked | 1.0 |
 | esc_attr | 2.8.0 |
+| get_bloginfo | 0.71 |
 | get_option | 1.5.0 |
 | get_post | 1.5.1 |
 | is_admin | 1.5.1 |

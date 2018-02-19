@@ -173,15 +173,15 @@ add_action(
 		}
 		if ( 1 === intval( $options['justified'] ) ) {
 			$jsData['justified'] = true;
-			$jsData['justified_height'] = intval($options['justified_height']) > 0 ? intval($options['justified_height']) : 120 ;
-			$jsData['justified_margins'] = intval($options['justified_margins']);
-			$jsData['justified_captions'] = intval($options['justified_captions']);
-			$jsData['justified_randomize'] = intval($options['justified_randomize']);
+			$jsData['justified_height'] = intval( $options['justified_height'] ) > 0 ? intval( $options['justified_height'] ) : 120 ;
+			$jsData['justified_margins'] = intval( $options['justified_margins'] );
+			$jsData['justified_captions'] = intval( $options['justified_captions'] );
+			$jsData['justified_randomize'] = intval( $options['justified_randomize'] );
 		}
 		switch ( $options['lightbox'] ) {
                     	case 'colorbox':
 				$jsFileName         = 'colorbox';
-				$cssFileName        = 'colorbox/' . intval($options['colorbox_layout']) . '/colorbox';
+				$cssFileName        = 'colorbox/' . intval( $options['colorbox_layout'] ) . '/colorbox';
 				$jsData['name']     = 'colorbox';
 				$jsData['lightbox'] = 'rel';
 				$jsData['title']    = 'title';
@@ -229,7 +229,8 @@ add_action(
 		if ( true === is_admin_bar_showing() ) {
 			wp_add_inline_style( 'admin-bar', '#wpadminbar {z-index: 99990;}' );
 		}
-                if ('colorbox' === $options['lightbox']) {
+		if ( 'colorbox' === $options['lightbox'] ) {
+			$language = get_bloginfo( 'language' );
 			wp_add_inline_style( 'mpcx-lightbox', '#cboxOverlay, #cboxWrapper, #colorbox {z-index: 99999;} #colorbox {font: 12px/1.2 Verdana, sans-serif;} #colorbox button {font: 400 13.3333px Arial; text-transform: none;}' );
 		}
 		if ( 1 === intval( $options['justified'] ) ) {
