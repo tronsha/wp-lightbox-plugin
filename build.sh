@@ -1,20 +1,27 @@
-#!/bin/sh
+#!/bin/bash
 NODE_EXISTS=1
 type node >/dev/null 2>&1 || NODE_EXISTS=0;
 if [ $NODE_EXISTS = 1 ]; then
     echo 'Removing old files ...'
     rm ./wordpress/trunk/public/css/*.*
     rm ./wordpress/trunk/public/js/*.*
+    rm ./wordpress/trunk/public/js/i18n/*.*
     rm ./wordpress/trunk/public/images/*.*
     rm ./wordpress/trunk/public/css/colorbox/*/*.*
     rm ./wordpress/trunk/public/css/colorbox/*/images/*.*
     echo '... ready!'
     echo 'Creating minified JavaScript ...'
     ./vendor/uglifyjs -m --comments /^!/ ./src/js/images.js -o ./wordpress/trunk/public/js/images.min.js
-    ./vendor/uglifyjs -m --comments /^!/  ./vendor/lightbox/dist/js/lightbox.js -o ./wordpress/trunk/public/js/lightbox.min.js
-    ./vendor/uglifyjs -m --comments /^!/  ./vendor/fancybox/dist/jquery.fancybox.js -o ./wordpress/trunk/public/js/fancybox.min.js
-    ./vendor/uglifyjs -m --comments /^!/  ./vendor/justifiedgallery/dist/js/jquery.justifiedGallery.js -o ./wordpress/trunk/public/js/justifiedgallery.min.js
-    ./vendor/uglifyjs -m --comments /^!/  ./vendor/colorbox/jquery.colorbox.js -o ./wordpress/trunk/public/js/colorbox.min.js
+    ./vendor/uglifyjs -m --comments /^!/ ./vendor/lightbox/dist/js/lightbox.js -o ./wordpress/trunk/public/js/lightbox.min.js
+    ./vendor/uglifyjs -m --comments /^!/ ./vendor/fancybox/dist/jquery.fancybox.js -o ./wordpress/trunk/public/js/fancybox.min.js
+    ./vendor/uglifyjs -m --comments /^!/ ./vendor/justifiedgallery/dist/js/jquery.justifiedGallery.js -o ./wordpress/trunk/public/js/justifiedgallery.min.js
+    ./vendor/uglifyjs -m --comments /^!/ ./vendor/colorbox/jquery.colorbox.js -o ./wordpress/trunk/public/js/colorbox.min.js
+    for filename in ./vendor/colorbox/i18n/*.js; do
+        name=$(echo $filename| cut -d'/' -f 5)
+        name=${name/jquery.colorbox-/}
+        name=${name/.js/}
+        ./vendor/uglifyjs -m --comments /^!/ $filename -o ./wordpress/trunk/public/js/i18n/colorbox.$name.min.js
+    done
     echo '... ready!'
     echo 'Creating minified CSS ...'
     ./vendor/csso ./vendor/lightbox/dist/css/lightbox.css -o ./wordpress/trunk/public/css/lightbox.min.css
