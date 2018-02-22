@@ -218,7 +218,7 @@ add_action(
 		wp_register_script(
 			'mpcx-images2lightbox',
 			plugin_dir_url( __FILE__ ) . 'public/js/images.min.js',
-			array( 'jquery' ),
+			array( 'jquery', 'mpcx-lightbox' ),
 			MPCX_LIGHTBOX_VERSION,
 			true
 		);
@@ -231,6 +231,26 @@ add_action(
 		}
 		if ( 'colorbox' === $options['lightbox'] ) {
 			$language = get_bloginfo( 'language' );
+			$languageJsDirPath = plugin_dir_path( __FILE__ ) . 'public/js/i18n/colorbox.' . $language . '.min.js';
+                        if ( true === file_exists( $languageJsDirPath ) ) {
+				$languageJsDirUrl = plugin_dir_url( __FILE__ ) . 'public/js/i18n/colorbox.' . $language . '.min.js';
+                        } else {
+				$language = substr( $language, 0, 2 );
+				$languageJsDirPath = plugin_dir_path( __FILE__ ) . 'public/js/i18n/colorbox.' . $language . '.min.js';
+				if ( true === file_exists( $languageJsDirPath ) ) {
+					$languageJsDirUrl = plugin_dir_url( __FILE__ ) . 'public/js/i18n/colorbox.' . $language . '.min.js';
+				}
+			}
+                        if ( true === isset( $languageJsDirUrl ) ) {
+				wp_register_script(
+					'mpcx-lightbox-i18n',
+					$languageJsDirUrl,
+					array( 'mpcx-lightbox' ),
+					MPCX_LIGHTBOX_VERSION,
+					true
+				);
+				wp_enqueue_script( 'mpcx-lightbox-i18n' );
+			}
 			wp_add_inline_style( 'mpcx-lightbox', '#cboxOverlay, #cboxWrapper, #colorbox {z-index: 99999;} #colorbox {font: 12px/1.2 Verdana, sans-serif;} #colorbox button {font: 400 13.3333px Arial; text-transform: none;}' );
 		}
 		if ( 1 === intval( $options['justified'] ) ) {
