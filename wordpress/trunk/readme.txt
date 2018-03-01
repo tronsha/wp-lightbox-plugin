@@ -1,5 +1,6 @@
 === Lightbox ===
 Contributors: DeusTron
+Donate link: http://www.mpcx.net/wordpress/donate/
 Tags: lightbox, fancybox, colorbox, justified gallery, gallery
 Requires at least: 3.3
 Tested up to: 4.9
