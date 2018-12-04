@@ -3,7 +3,7 @@ Contributors: DeusTron
 Donate link: http://www.mpcx.net/wordpress/donate/
 Tags: lightbox, fancybox, colorbox, justified gallery, gallery
 Requires at least: 3.3
-Tested up to: 4.9
+Tested up to: 5.0
 Stable tag: 1.2.5
 License: MIT
 License URI: https://raw.githubusercontent.com/tronsha/wp-lightbox-plugin/master/LICENSE
