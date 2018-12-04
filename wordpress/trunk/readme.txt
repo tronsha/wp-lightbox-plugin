@@ -38,6 +38,7 @@ This plugin uses [Lightbox2](https://github.com/lokesh/lightbox2) from Lokesh Dh
 = 1.2.5 =
 * Add: Colorbox v1.6.4
 * Update: fancyBox v3.5.2
+* Update: Justified Gallery v3.7
 
 = 1.2.4 =
 * Add: Justified Gallery v3.6.3

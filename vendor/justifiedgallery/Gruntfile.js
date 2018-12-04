@@ -6,12 +6,12 @@ module.exports = function(grunt) {
   grunt.initConfig({
     
     // Metadata.
-    pkg: grunt.file.readJSON('justifiedGallery.jquery.json'),
+    pkg: grunt.file.readJSON('package.json'),
     banner: '/*!\n' +
       ' * <%= pkg.title || pkg.name %> - v<%= pkg.version %>\n' +
       '<%= pkg.homepage ? " * " + pkg.homepage + "\\n" : "" %>' +
       ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>\n' +
-      ' * Licensed under the <%= _.pluck(pkg.licenses, "type").join(", ") %> license.\n' + 
+      ' * Licensed under the <%= pkg.license %> license.\n' +
       ' */\n',
 
     // Task configuration.
@@ -21,16 +21,27 @@ module.exports = function(grunt) {
 
     // Copy the src files to the dist files, also appending the banner
     concat: {
-      options: {
-        banner: '<%= banner %>',
-        stripBanners: true
-      },
-      dist: {
+      main: {
+        options: {
+          banner: '<%= banner %>',
+          stripBanners: true
+        },
         files: {
-          'dist/js/jquery.<%= pkg.name %>.js': ['src/js/<%= pkg.name %>.js'],
+          'dist/js/jquery.<%= pkg.name %>.js': ['src/js/jquery.<%= pkg.name %>.js'],
           'dist/css/<%= pkg.name %>.css': ['dist/css/<%= pkg.name %>.css'],
           'dist/css/<%= pkg.name %>.min.css': ['dist/css/<%= pkg.name %>.min.css']
         }
+      }
+    },
+
+    replace: {
+      main: {
+        src: ['dist/js/jquery.<%= pkg.name %>.js'],
+        dest: 'dist/js/jquery.<%= pkg.name %>.js',
+        replacements: [{
+          from: /\/\/JG-CONTROLLER((.|\n)*)\/\/END JG-CONTROLLER/m,
+          to: '<%= grunt.file.read("src/js/" + pkg.name + ".js").replace(/\\/\\*[\\s\\S]*?\\*\\/(\\n|\\s)*/, "").replace(/\\n/g, "\\n  ") %>'
+        }]
       }
     },
 
@@ -130,8 +141,9 @@ module.exports = function(grunt) {
         devDependencies: true,
         includeSelf: true,
         src: ['test/main/*.html', 'test/related/*.html'],
-        "overrides": {
-          "swipebox": { //TODO waiting for the pull request
+        exclude: [ 'bower_components/requirejs' ],
+        overrides: {
+          "swipebox": {
             "main": ["src/js/jquery.swipebox.min.js", "src/css/swipebox.min.css"]
           },
           "colorbox": { 
@@ -139,6 +151,18 @@ module.exports = function(grunt) {
           }
 
         }
+      }
+    },
+
+    publish: {
+      main: {
+        options: {
+            ignore: [
+              'node_modules', 
+              'bower_components'
+            ]
+        },
+        src: ['./']
       }
     }
 
@@ -148,7 +172,7 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   // Default task (release mode)
-  grunt.registerTask('default', ['jshint', 'less', 'csslint', 'concat', 'uglify', 'compress']);
+  grunt.registerTask('default', ['jshint', 'less', 'csslint', 'concat', 'replace', 'uglify', 'compress']);
 
   // Debug mode (when the library is needed to be compiled only for the tests)
   grunt.registerTask('debug', ['less', 'concat']);

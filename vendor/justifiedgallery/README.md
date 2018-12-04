@@ -4,18 +4,38 @@
   </a>
 </div>
 
-This is a JQuery plugin which allows you to create responsive, infinite, and high quality justified
-gallery of images.
+**Justified Gallery is a JavaScript library that allows you to create an high quality justified gallery of images.**
 
-A common problem, for people who create sites, is to create an elegant image gallery that manages
-the various sizes and aspect ratio of images. Flickr and Google+ manage this situation in an excellent
-way, the purpose of this plugin is to give you the power of these solutions, with a new fast algorithm.
+[![Bower version](https://badge.fury.io/bo/justifiedGallery.svg)](https://badge.fury.io/bo/justifiedGallery)
+[![npm version](https://badge.fury.io/js/justifiedGallery.svg)](https://badge.fury.io/js/justifiedGallery)
+
+This is a common problem for people who create websites: you have a series of images to display, but you are not sure how to arrange them in an elegant way. Important websites such as 500px, Flickr, or Google display images in an excellent way, justifying them similarly to brick wall. Justified Gallery will give you the power to do that too.
+
+Justified Gallery is a professional and open source library that even 500px, one of the best photography social network, chose for displaying their images!
 
 <div style="text-align: center; font-size: 110%;">
 	<a href="http://miromannino.github.io/Justified-Gallery/" target="_blank">Official project page</a>
 </div>
 
 ## Release History
+
+### 3.7
+
+* Compatible with AMD and CommonJS formats using Universal Module Definition pattern (examples provided for Webpack, Browserify, and AMD/RequireJS)
+* $.prop() changed to $.attr() because it was creating problems with Foundation
+* The library could now be used without necessarily defining it as jQuery plugin. But it still requires jQuery to provide a better browser compatibility.
+
+### 3.6.5
+
+* For more flexibility, option imgSelector to select the image, given an image entry (e.g. a figure or a div)
+* $.attr() changed to $.prop() for better compatibility
+* Right to left option
+* Prevent gallery height collapse when the page is resized and keep the scroll position
+* Avoid width check in case the gallery is not visible
+
+### 3.6.4
+
+* semplified the possibility to have a gallery of `<figure>`. 
 
 ### 3.6.3
 
@@ -82,13 +102,15 @@ way, the purpose of this plugin is to give you the power of these solutions, wit
 * Configurable entry selector
 * Code refactoring
 
+<details>
+	<summary>Older versions</summary>
+	
 ### 3.5.4
 
 * Added the border option
 * Fixed some problems with waitThumbnailsLoad and infinite scroll
 
 ### 3.5
-
 * The default suffixes are all empty, to be simpler to understand. To have the previous suffixes,
 the following settings can be used:
 
@@ -229,6 +251,8 @@ too like a bug than a feature.
 * Setting name changed: 'usedSuffix' to 'usedSizeRange'.
 * Added the CSS for the div that shows the Justified Gallery errors. Now can be changed, or hided.
 
+</details>
+
 ## Contributing
 
 ### Important notes
@@ -247,7 +271,7 @@ Regarding code style like indentation and whitespace, **follow the conventions y
  - Steps:
 	- Fork and clone this repository.
 	- Open a terminal and change the current directory to the cloned folder.
-	- Run `npm install` to install all dependencies (including Grunt).
+	- Run `npm install` to install all dependencies (including bower and Grunt).
 	- Run `bower install` to install all the dependencies needed for the tests.
 	- Run `grunt debug` to build the library only for testing (debug mode).
 	- Run `grunt` to build this project in release mode.

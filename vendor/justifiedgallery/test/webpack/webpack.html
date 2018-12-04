@@ -2,25 +2,12 @@
 <html>
 
 <head>
-    <!-- bower:css -->
-    <link rel="stylesheet" href="../../bower_components/colorbox/example1/colorbox.css" />
-    <link rel="stylesheet" href="../../bower_components/swipebox/src/css/swipebox.min.css" />
     <link rel="stylesheet" href="../../dist/css/justifiedGallery.css" />
-    <!-- endbower -->
 </head>
 
 <body>
-    <h1>Stateful test</h1>
-    <p>
-        <button id="addEntries">Add two entries</button>
-        <button id="add20Entries">Add twenty entries</button>
-        <button id="removeEntries">Remove last two entries</button>
-        <button id="remove20Entries">Remove twenty entries</button>
-        <button id="callJG">CallJG</button>
-        <button id="callJGW200">CallJG with Width 200</button>
-        <button id="callBorder20">CallJG with Border 20</button>
-    </p>
-    <div id="statefulEx" style="background-color: red;">
+    <h1>Layout test</h1>
+    <div id="simpletest" style="background-color: red;">
         <a href="../photos/8083451788_552becfbc7_b.jpg" title="What's your destination?">
             <img src="../photos/8083451788_552becfbc7_m.jpg" />
         </a>
@@ -71,44 +58,7 @@
         </a>
     </div>
     
-    <!-- bower:js -->
-    <script src="../../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../../bower_components/colorbox/jquery.colorbox.js"></script>
-    <script src="../../bower_components/swipebox/src/js/jquery.swipebox.min.js"></script>
-    <script src="../../dist/js/jquery.justifiedGallery.js"></script>
-    <!-- endbower -->
-    <script>
-    $("#statefulEx").justifiedGallery({ margin: 2 });
-
-    $('#callJG').on('click', function() {
-        $("#statefulEx").justifiedGallery();
-    });
-
-    $('#callJGW200').on('click', function() {
-        $("#statefulEx").justifiedGallery({ rowHeight: 200 });
-    });
-
-    $('#callBorder20').on('click', function() {
-        $("#statefulEx").justifiedGallery({ border: 20 });
-    });
-
-    function addEntries(num) {
-       var $entries = $('#statefulEx a');
-        for (var i = 0; i < num; i++) $($entries.get([Math.floor(Math.random() * $entries.length)]).outerHTML).appendTo($('#statefulEx')); 
-    }
-
-    $('#addEntries').on('click', function() { addEntries(2); });
-    $('#add20Entries').on('click', function() { addEntries(20); });
-
-    function removeEntries(num) {
-        var $entries = $('#statefulEx a');
-        for (var i = 0; i < num; i++) $entries.eq(-1 - i).remove();
-    }
-
-    $('#removeEntries').on('click', function() { removeEntries(2); });
-    $('#remove20Entries').on('click', function() { removeEntries(20); });
-
-    </script>
+    <script src="dist/bundle.js"></script>
 </body>
 
 </html>
